@@ -9,7 +9,7 @@ The visualization handler for GrADyS SIM is [here](https://project-gradys.github
 
 ## Introducing the System Model
 
-We have **n** sensors spread around a location, which collect information of interest about the environment. Because this location has no communication infrastructure, we will use a UAV swarm (of **n** drones) that will fly autonomously to the deployment location. They will receive data from the sensors through local communication and fly back to the central ground station where data will be off-loaded and analysed.
+We have **n** sensors spread around a location, which collect information of interest about the environment. Because this location has no communication infrastructure, we will use a UAV swarm that will fly autonomously to the deployment location. They will receive data from the sensors through local communication and fly back to the central ground station where data will be off-loaded and analysed.
 
 ### Sensor Protocol
 
@@ -35,7 +35,7 @@ An UAV (un-manned aerial vehicle) continuously flies between the ground station 
 
 ### Consensus Protocol
 
-The challenge here is to implement a consensus protocol for determining which UAV will leave the swarm in order to collect data from a sensor. We will implement a known consensus algorithm and the value for decision will be (1) the closest UAV to the sensor, i.e. UAV smallest in distance from sensor, or (2) the UAV which owns that sensor (i.e. for each UAV i, they have a sensor i deployed).
+The challenge here is to implement a consensus protocol for determining which UAV will leave the swarm in order to collect data from a sensor. We will implement a known consensus algorithm and the value for decision will be the closest UAV to the sensor, i.e. UAV smallest in distance from sensor.
 
 ## Development Steps
 
