@@ -4,3 +4,5 @@ The project's goal is to implement a distributed systems consensus algorithm for
 
 - **Framework:** [GrADyS SIM Next Gen](https://project-gradys.github.io/gradys-sim-nextgen/)
 - **Language:** Python 3.10
+
+The visualization handler for GrADyS SIM is [here](https://project-gradys.github.io/gradys-sim-nextgen-visualization/).
