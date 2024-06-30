@@ -5,39 +5,45 @@ from gradysim.simulator.handler.visualization import VisualizationHandler, Visua
 from gradysim.simulator.simulation import SimulationBuilder, SimulationConfiguration
 from app_protocol import SensorProtocol, UAVProtocol, GroundStationProtocol
 
+import globals
+import logging
 
 def main():
+    _mainLog = logging.getLogger()
+
     # Configuring simulation
     config = SimulationConfiguration(
         duration=30,
-        real_time=True
+        real_time=True,
+        execution_logging=True,
     )
 
     builder = SimulationBuilder(config)
 
-    # Instantiating 4 sensors in fixed positions
-    builder.add_node(SensorProtocol, (150, 0, 0))
-    builder.add_node(SensorProtocol, (0, 150, 0))
-    builder.add_node(SensorProtocol, (-150, 0, 0))
-    builder.add_node(SensorProtocol, (0, -150, 0))
+    # Instantiating sensors in fixed positions
+    for coord in globals.SENSORS_COORD_LIST:
+        id = builder.add_node(SensorProtocol, coord)
+        _mainLog.info(f"Placing sensor {id} at pos {coord}\n")
 
-    # Instantiating 4 UAVs at (0,0,0)
-    for _ in range(4):
-        builder.add_node(UAVProtocol, (0, 0, 0))
+    # Instantiating ground station at a fixed position
+    builder.add_node(GroundStationProtocol, globals.GROUND_BASE_CORD)
+    _mainLog.info(f"Placing ground station at pos {globals.GROUND_BASE_CORD}\n")
 
-    # Instantiating ground station at (0,0,0)
-    builder.add_node(GroundStationProtocol, (0, 0, 0))
+    # Instantiating UAVs at ground base
+    for _ in range(5):
+        id = builder.add_node(UAVProtocol, globals.GROUND_BASE_CORD)
+        _mainLog.info(f"Placing UAV {id} at ground station\n")
 
     # Adding required handlers
     builder.add_handler(TimerHandler())
     builder.add_handler(CommunicationHandler(CommunicationMedium(
-        transmission_range=30
+        transmission_range=globals.COMMUNICATION_MEDIUM_RANGE
     )))
     builder.add_handler(MobilityHandler())
     builder.add_handler(VisualizationHandler(VisualizationConfiguration(
-        x_range=(-150, 150),
-        y_range=(-150, 150),
-        z_range=(0, 150)
+        x_range=globals.SIMULATION_RANGE_X,
+        y_range=globals.SIMULATION_RANGE_Y,
+        z_range=globals.SIMULATION_RANGE_Z,
     )))
 
     # Building and starting

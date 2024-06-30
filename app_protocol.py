@@ -3,7 +3,6 @@ import json
 import logging
 from typing import TypedDict
 import globals
-import random
 
 from gradysim.protocol.interface import IProtocol
 from gradysim.protocol.messages.communication import SendMessageCommand, BroadcastMessageCommand
@@ -143,10 +142,10 @@ class UAVProtocol(IProtocol):
         self._log = logging.getLogger()
         self.total_received_packets = 0
         self._mission = MissionMobilityPlugin(self, MissionMobilityConfiguration(
-            loop_mission=LoopMission.REVERSE, #TODO: Review
+            speed=100,
         ))
 
-        self._mission.start_mission(globals.MISSION_LIST.pop())
+        self._mission.start_mission(globals.BASE_WAYPOINTS_COORD_LIST)
         self._ping_network()
 
     # UAV will ping network (send broadcast) every one second using a timer
