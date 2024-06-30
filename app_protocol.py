@@ -32,7 +32,7 @@ def new_message(packets: int, senderType: int, senderID: int) -> GeneralMessage:
     message: GeneralMessage = {
         'total_packets': packets,
         'sender_type': senderType,
-        'sender_id': senderID()
+        'sender_id': senderID,
     }
 
     return message
