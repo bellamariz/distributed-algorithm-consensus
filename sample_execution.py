@@ -1,4 +1,4 @@
-from counter_protocol import CounterProtocol
+from sample_protocol import CounterProtocol
 from gradysim.simulator.handler.communication import CommunicationMedium, CommunicationHandler
 from gradysim.simulator.handler.mobility import MobilityHandler
 from gradysim.simulator.handler.timer import TimerHandler
