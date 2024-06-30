@@ -43,7 +43,7 @@ By using the GrADyS SIM Next Gen framework, the following development steps will
 
 1) We will have to map where in the deployment location the sensors and the ground station will be placed.
 
-1) We will need a mobility protocol for the UAVs to move in a swarm. A known Mission Mobility Plugin will be used in order to infer waypoints in the deployment location, which the UAVs will have to follow, passing close to the sensors and, in the end, forming a roundtrip path from the Ground Station.
+2) We will need a mobility protocol for the UAVs to move in a swarm. A known Mission Mobility Plugin will be used in order to infer waypoints in the deployment location, which the UAVs will have to follow, walking close to the sensors and, in the end, forming a roundtrip path from the Ground Station.
 
 3) We will implement a consensus protocol for the UAVs to decide which one of them will break from the swarm and mission, in order to retrieve data from the sensors.
 
@@ -53,7 +53,6 @@ For this, we will need a request-reponse messaging system that falls within one 
 2) UAV-and-Ground-Station: Will serve to enable the packet dump from the UAVs to the ground station.
 3) Sensor-and-UAV: Will serve to transfer packets between a sensor and a UAV.
 
+An example of what the network may look like is as follows. The UAVs would follow a counter clockwise path, starting from the ground base at `(0,0,0)`, passing through each waypoint `w1` to `w8`, collecting data from all the sensors `S1` to `S8`, and finishing back at the ground base.
 
-
-
-
+![network](coords.jpg)
