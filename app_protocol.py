@@ -3,6 +3,7 @@ import json
 import logging
 from typing import TypedDict
 import globals
+import random
 
 from gradysim.protocol.interface import IProtocol
 from gradysim.protocol.messages.communication import SendMessageCommand, BroadcastMessageCommand
@@ -136,6 +137,7 @@ class GroundStationProtocol(IProtocol):
 class UAVProtocol(IProtocol):
     _log: logging.Logger
     total_received_packets: int
+    waypoints: list
     _mission: MissionMobilityPlugin
 
     def initialize(self) -> None:
@@ -145,8 +147,28 @@ class UAVProtocol(IProtocol):
             speed=100,
         ))
 
-        self._mission.start_mission(globals.BASE_WAYPOINTS_COORD_LIST)
+        self._init_waypoints()
+        self._mission.start_mission(self.waypoints)
         self._ping_network()
+
+    # Calculate waypoints for each UAV - with offesets so they do not overlap
+    def _init_waypoints(self) -> None:
+        uavID = self.provider.get_id()
+        # offsetFactor = (uavID * random.randint(1, 8))
+        baseWaypoints = globals.BASE_WAYPOINTS_COORD_LIST
+        uavWaypoints = []
+
+        # Iterate over all base waypoint coords (except last, which is return to base)
+        for coord in baseWaypoints[:-1]:
+            offsetFactor = (uavID * random.randint(1, 5))
+            x = coord[0] + offsetFactor
+            y = coord[1] - offsetFactor
+            z = coord[2]
+            uavWaypoints.append((x,y,z))
+
+        uavWaypoints.append(baseWaypoints[-1])
+        self.waypoints = uavWaypoints.copy()
+        self._log.info(f"Waypoints for uav {uavID}: {self.waypoints}")
 
     # UAV will ping network (send broadcast) every one second using a timer
     def _ping_network(self) -> None:
