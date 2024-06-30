@@ -161,7 +161,7 @@ class UAVProtocol(IProtocol):
         # Iterate over all base waypoint coords (except last, which is return to base)
         for coord in baseWaypoints[:-1]:
             offsetFactor = (uavID * random.randint(1, 5))
-            x = coord[0] + offsetFactor
+            x = coord[0] - offsetFactor
             y = coord[1] - offsetFactor
             z = coord[2]
             uavWaypoints.append((x,y,z))
