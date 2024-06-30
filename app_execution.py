@@ -9,7 +9,8 @@ from app_protocol import SensorProtocol, UAVProtocol, GroundStationProtocol
 def main():
     # Configuring simulation
     config = SimulationConfiguration(
-        duration=100
+        duration=30,
+        real_time=True
     )
 
     builder = SimulationBuilder(config)
@@ -21,10 +22,8 @@ def main():
     builder.add_node(SensorProtocol, (0, -150, 0))
 
     # Instantiating 4 UAVs at (0,0,0)
-    builder.add_node(UAVProtocol, (0, 0, 0))
-    builder.add_node(UAVProtocol, (0, 0, 0))
-    builder.add_node(UAVProtocol, (0, 0, 0))
-    builder.add_node(UAVProtocol, (0, 0, 0))
+    for _ in range(4):
+        builder.add_node(UAVProtocol, (0, 0, 0))
 
     # Instantiating ground station at (0,0,0)
     builder.add_node(GroundStationProtocol, (0, 0, 0))
