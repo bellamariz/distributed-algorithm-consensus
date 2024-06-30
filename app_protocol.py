@@ -65,7 +65,7 @@ class SensorProtocol(IProtocol):
     # Sensor implements handle_packets
     def handle_packet(self, message: str) -> None:
         general_message: GeneralMessage = json.loads(message)
-        self._log(report_message(general_message))
+        self._log.info(report_message(general_message))
 
         # Sensor receives a message from UAV and sends all its packets to UAV
         if general_message["sender_type"] == GeneralSender.UAV.value:
@@ -88,7 +88,7 @@ class SensorProtocol(IProtocol):
 
     # Sensor implements finish
     def finish(self) -> None:
-        self._log.info(f"Final packet count: {self.packet_count}")
+        self._log.info(f"Final packet count: {self.total_stored_packets}")
 
 
 
@@ -108,7 +108,7 @@ class GroundStationProtocol(IProtocol):
     # GroundStation implements handle_packet
     def handle_packet(self, message: str) -> None:
         general_message: GeneralMessage = json.loads(message)
-        self._log(report_message(general_message))
+        self._log.info(report_message(general_message))
 
          # GroundStation receives a message from UAV and collects all packets from it
         if general_message["sender_type"] == GeneralSender.UAV.value:
@@ -166,12 +166,13 @@ class UAVProtocol(IProtocol):
     
     # UAV implements handle_timer
     def handle_timer(self, timer: str) -> None:
-        self._ping_network()
+        if (timer == "uav_ping_network"):
+            self._ping_network()
 
     # UAV implements handle_packet
     def handle_packet(self, message: str) -> None:
         general_message: GeneralMessage = json.loads(message)
-        self._log(report_message(general_message))
+        self._log.info(report_message(general_message))
 
         if general_message["sender_type"] == GeneralSender.SENSOR.value:
             self.total_received_packets += general_message["total_packets"]

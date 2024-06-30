@@ -9,7 +9,7 @@ from app_protocol import SensorProtocol, UAVProtocol, GroundStationProtocol
 def main():
     # Configuring simulation
     config = SimulationConfiguration(
-        duration=200
+        duration=100
     )
 
     builder = SimulationBuilder(config)
