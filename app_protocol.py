@@ -22,10 +22,20 @@ class GeneralSender(enum.Enum):
     SENSOR = 1
     UAV = 2
 
-## Auxiliary methods for logging
+## Auxiliary methods
+
 def report_message(message: GeneralMessage) -> str:
     return (f"Received message with {message['total_packets']} packets from "
             f"{GeneralSender(message['sender_type']).name} {message['sender_id']}")
+
+def new_message(packets: int, senderType: int, senderID: int) -> GeneralMessage:
+    message: GeneralMessage = {
+        'total_packets': packets,
+        'sender_type': senderType,
+        'sender_id': senderID()
+    }
+
+    return message
 
 
 ## Protocols
@@ -45,11 +55,11 @@ class SensorProtocol(IProtocol):
     def _generate_packet(self) -> None:
         self.total_stored_packets += 1
         self._log.info(f"Generated packet, current count {self.total_stored_packets}")
-        self.provider.schedule_timer("generate_packet", self.provider.current_time() + 1)
+        self.provider.schedule_timer("sensor_generate_packet", self.provider.current_time() + 1)
 
     # Sensor implements handle_timer
     def handle_timer(self, timer: str) -> None:
-        if (timer == "generate_packet"):
+        if (timer == "sensor_generate_packet"):
             self._generate_packet()
     
     # Sensor implements handle_packets
@@ -57,18 +67,18 @@ class SensorProtocol(IProtocol):
         general_message: GeneralMessage = json.loads(message)
         self._log(report_message(general_message))
 
-        # Sensor receives a message from UAV and dumps all packets to UAV
+        # Sensor receives a message from UAV and sends all its packets to UAV
         if general_message["sender_type"] == GeneralSender.UAV.value:
-            resposeToUAV: GeneralMessage = {
-                'total_packets': self.total_stored_packets,
-                'sender_type': GeneralSender.SENSOR.value,
-                'sender_id': self.provider.get_id()
-            }
+            responseToUAV = new_message(
+                packets=self.total_stored_packets,
+                senderType= GeneralSender.SENSOR.value,
+                senderID=self.provider.get_id(),
+            )
 
-            responseCmd = SendMessageCommand(json.dumps(resposeToUAV), general_message["sender_id"])
+            responseCmd = SendMessageCommand(json.dumps(responseToUAV), general_message["sender_id"])
             self.provider.send_communication_command(responseCmd)
 
-            self._log.info(f"Sent {resposeToUAV['total_packets']} packets to UAV {general_message['sender_id']}")
+            self._log.info(f"Sent {responseToUAV['total_packets']} packets to UAV {general_message['sender_id']}")
 
             self.total_stored_packets = 0
 
@@ -85,11 +95,11 @@ class SensorProtocol(IProtocol):
 ## Implementation for the ground station
 class GroundStationProtocol(IProtocol):
     _log: logging.Logger
-    total_received_packets: int
+    total_collected_packets: int
 
     def initialize(self) -> None:
         self._log = logging.getLogger()
-        self.total_received_packets = 0
+        self.total_collected_packets = 0
 
     # GroundStation implements handle_timer
     def handle_timer(self, timer: str) -> None:
@@ -100,18 +110,18 @@ class GroundStationProtocol(IProtocol):
         general_message: GeneralMessage = json.loads(message)
         self._log(report_message(general_message))
 
-         # GroundStation receives a message from UAV and dumps all packets to UAV
+         # GroundStation receives a message from UAV and collects all packets from it
         if general_message["sender_type"] == GeneralSender.UAV.value:
-            resposeToUAV: GeneralMessage = {
-                'total_packets': self.total_received_packets,
-                'sender_type': GeneralSender.GROUND_STATION.value,
-                'sender_id': self.provider.get_id()
-            }
+            responseToUAV = new_message(
+                packets=self.total_collected_packets,
+                senderType= GeneralSender.GROUND_STATION.value,
+                senderID=self.provider.get_id(),
+            )
 
-            responseCmd = SendMessageCommand(json.dumps(resposeToUAV), general_message["sender_id"])
+            responseCmd = SendMessageCommand(json.dumps(responseToUAV), general_message["sender_id"])
             self.provider.send_communication_command(responseCmd)
 
-            self._log.info(f"Sent acknowledgment to UAV {general_message['sender_id']}. Current count {self.total_received_packets}")
+            self._log.info(f"Sent acknowledgment to UAV {general_message['sender_id']}. Current count {self.total_collected_packets}")
 
     # GroundStation implements handle_telemetry
     def handle_telemetry(self, telemetry: Telemetry) -> None:
@@ -119,14 +129,69 @@ class GroundStationProtocol(IProtocol):
 
     # GroundStation implements finish
     def finish(self) -> None:
+        self._log.info(f"Final packet count: {self.total_collected_packets}")
+
+
+
+## Implementation for the UAV
+class UAVProtocol(IProtocol):
+    _log: logging.Logger
+    total_received_packets: int
+    _mission: MissionMobilityPlugin
+
+    def initialize(self) -> None:
+        self._log = logging.getLogger()
+        self.total_received_packets = 0
+        self._mission = MissionMobilityPlugin(self, MissionMobilityConfiguration(
+            loop_mission=LoopMission.REVERSE, #TODO: Review
+        ))
+
+        self._mission.start_mission(globals.MISSION_LIST.pop())
+        self._ping_network()
+
+    # UAV will ping network (send broadcast) every one second using a timer
+    def _ping_network(self) -> None:
+        self._log.info(f"Pinging network, current packet count {self.total_received_packets}")
+
+        messageToAll = new_message(
+            packets=self.total_received_packets,
+            senderType= GeneralSender.UAV.value,
+            senderID=self.provider.get_id(),
+        )
+
+        broadcastCmd = BroadcastMessageCommand(json.dumps(messageToAll))
+        self.provider.send_communication_command(broadcastCmd)
+
+        self.provider.schedule_timer("uav_ping_network", self.provider.current_time() + 1)
+    
+    # UAV implements handle_timer
+    def handle_timer(self, timer: str) -> None:
+        self._ping_network()
+
+    # UAV implements handle_packet
+    def handle_packet(self, message: str) -> None:
+        general_message: GeneralMessage = json.loads(message)
+        self._log(report_message(general_message))
+
+        if general_message["sender_type"] == GeneralSender.SENSOR.value:
+            self.total_received_packets += general_message["total_packets"]
+            self._log.info(f"Received {general_message['total_packets']} packets from "
+                           f"sensor {general_message['sender_id']}. Current count {self.total_received_packets}.")
+        elif general_message["sender_type"] == GeneralSender.GROUND_STATION.value:
+            self.total_received_packets = 0
+            self._log.info("Received acknowledgment from ground station")
+    
+    # UAV implements handle_telemetry
+    def handle_telemetry(self, telemetry: Telemetry) -> None:
+        pass
+
+    # UAV implements finish
+    def finish(self) -> None:
         self._log.info(f"Final packet count: {self.total_received_packets}")
 
 
 
-## TODO: Implementation for the UAV
-class UAVProtocol(IProtocol):
-    _log: logging.Logger
-
 ## TODO: Implementation for the consensus
+## TODO: If UAV is closest to Sensor, it will receive its packets
 class ConsensusProtocol(IProtocol):
     _log: logging.Logger
