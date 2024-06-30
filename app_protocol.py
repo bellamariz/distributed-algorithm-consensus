@@ -155,12 +155,12 @@ class UAVProtocol(IProtocol):
     def _init_waypoints(self) -> None:
         uavID = self.provider.get_id()
         # offsetFactor = (uavID * random.randint(1, 8))
-        baseWaypoints = globals.BASE_WAYPOINTS_COORD_LIST
+        baseWaypoints = globals.BASE_WAYPOINTS_COORD_LIST_OPT3
         uavWaypoints = []
 
         # Iterate over all base waypoint coords (except last, which is return to base)
         for coord in baseWaypoints[:-1]:
-            offsetFactor = (uavID * random.randint(1, 5))
+            offsetFactor = (uavID * random.randint(1, 3))
             x = coord[0] - offsetFactor
             y = coord[1] - offsetFactor
             z = coord[2]
