@@ -138,11 +138,17 @@ class UAVProtocol(IProtocol):
     _log: logging.Logger
     total_received_packets: int
     waypoints: list
+    dumped_packets: bool
     _mission: MissionMobilityPlugin
 
     def initialize(self) -> None:
         self._log = logging.getLogger()
+        self._init_routine()
+
+    # Initialize new routine
+    def _init_routine(self) -> None:
         self.total_received_packets = 0
+        self.dumped_packets = False
         self._mission = MissionMobilityPlugin(self, MissionMobilityConfiguration(
             speed=100,
         ))
@@ -162,14 +168,14 @@ class UAVProtocol(IProtocol):
 
         # Iterate over all base waypoint coords (except last, which is return to base)
         for coord in baseWaypoints[:midPoint]:
-            offsetFactor = (uavID * random.randint(5, 10))
+            offsetFactor = (uavID * random.randint(3, 7))
             x = coord[0] - offsetFactor
             y = coord[1] - offsetFactor
             z = coord[2]
             uavWaypoints.append((x,y,z))
 
         for coord in baseWaypoints[midPoint:-1]:
-            offsetFactor = (uavID * random.randint(5, 10))
+            offsetFactor = (uavID * random.randint(3, 7))
             x = coord[0] + offsetFactor
             y = coord[1] + offsetFactor
             z = coord[2]
@@ -198,6 +204,8 @@ class UAVProtocol(IProtocol):
     def handle_timer(self, timer: str) -> None:
         if (timer == "uav_ping_network"):
             self._ping_network()
+        elif (timer == "restart_mission"):
+            self._init_routine()
 
     # UAV implements handle_packet
     def handle_packet(self, message: str) -> None:
@@ -210,11 +218,13 @@ class UAVProtocol(IProtocol):
                            f"sensor {general_message['sender_id']}. Current count {self.total_received_packets}.")
         elif general_message["sender_type"] == GeneralSender.GROUND_STATION.value:
             self.total_received_packets = 0
+            self.dumped_packets = True
             self._log.info("Received acknowledgment from ground station")
     
     # UAV implements handle_telemetry
     def handle_telemetry(self, telemetry: Telemetry) -> None:
-        pass
+        if(telemetry.current_position == globals.GROUND_BASE_CORD) and (self.dumped_packets):
+            self.provider.schedule_timer("restart_mission", self.provider.current_time() + 7)
 
     # UAV implements finish
     def finish(self) -> None:

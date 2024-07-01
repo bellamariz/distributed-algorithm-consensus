@@ -13,7 +13,7 @@ def main():
 
     # Configuring simulation
     config = SimulationConfiguration(
-        duration=30,
+        duration=100,
         real_time=True,
         execution_logging=True,
     )
