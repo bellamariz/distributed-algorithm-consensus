@@ -1,0 +1,168 @@
+INFO     [--------- Simulation started ---------]
+INFO     [it=0 time=0:00:00 | UAVProtocol 9 Initialization] Waypoints for uav 9: [(-54, 146, 20), (-186, 164, 20), (-295, 5, 20), (-277, -77, 20), (-195, -245, 20), (-36, -236, 20), (204, -146, 20), (286, -14, 20), (295, 95, 20), (195, 245, 20), (36, 236, 20), (0, 0, 20)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 9 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 10 Initialization] Waypoints for uav 10: [(-70, 130, 20), (-220, 130, 20), (-290, 10, 20), (-290, -90, 20), (-180, -230, 20), (-30, -230, 20), (180, -170, 20), (320, 20, 20), (300, 100, 20), (180, 230, 20), (30, 230, 20), (0, 0, 20)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 10 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 11 Initialization] Waypoints for uav 11: [(-77, 123, 20), (-194, 156, 20), (-283, 17, 20), (-305, -105, 20), (-205, -255, 20), (-66, -266, 20), (227, -123, 20), (305, 5, 20), (305, 105, 20), (216, 266, 20), (55, 255, 20), (0, 0, 20)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 11 Initialization] Mission: Starting mission
+INFO     [it=6 time=0:00:00 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=7 time=0:00:00 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=11 time=0:00:00 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=2047 time=0:00:01.460000 | UAVProtocol 11] Mission: Going to waypoint 1
+INFO     [it=2090 time=0:00:01.490000 | UAVProtocol 10] Mission: Going to waypoint 1
+INFO     [it=2205 time=0:00:01.570000 | UAVProtocol 9] Mission: Going to waypoint 1
+INFO     [it=3760 time=0:00:02.680000 | UAVProtocol 11] Mission: Going to waypoint 2
+INFO     [it=4072 time=0:00:02.900000 | UAVProtocol 9] Mission: Going to waypoint 2
+INFO     [it=4195 time=0:00:02.990000 | UAVProtocol 10] Mission: Going to waypoint 2
+INFO     [it=5632 time=0:00:04 | UAVProtocol 11] Received 2 packets from sensor 1. Current count 2.
+INFO     [it=5633 time=0:00:04 | UAVProtocol 10] Received 0 packets from sensor 1. Current count 0.
+INFO     [it=6087 time=0:00:04.330000 | UAVProtocol 11] Mission: Going to waypoint 3
+INFO     [it=6158 time=0:00:04.380000 | UAVProtocol 10] Mission: Going to waypoint 3
+INFO     [it=6791 time=0:00:04.830000 | UAVProtocol 9] Mission: Going to waypoint 3
+INFO     [it=7558 time=0:00:05.380000 | UAVProtocol 10] Mission: Going to waypoint 4
+INFO     [it=7823 time=0:00:05.570000 | UAVProtocol 11] Mission: Going to waypoint 4
+INFO     [it=7967 time=0:00:05.670000 | UAVProtocol 9] Mission: Going to waypoint 4
+INFO     [it=10063 time=0:00:07.160000 | UAVProtocol 10] Mission: Going to waypoint 5
+INFO     [it=10356 time=0:00:07.370000 | UAVProtocol 11] Mission: Going to waypoint 5
+INFO     [it=10598 time=0:00:07.540000 | UAVProtocol 9] Mission: Going to waypoint 5
+INFO     [it=12168 time=0:00:08.660000 | UAVProtocol 10] Mission: Going to waypoint 6
+INFO     [it=12321 time=0:00:08.770000 | UAVProtocol 11] Mission: Going to waypoint 6
+INFO     [it=12837 time=0:00:09.130000 | UAVProtocol 9] Mission: Going to waypoint 6
+INFO     [it=15233 time=0:00:10.840000 | UAVProtocol 10] Mission: Going to waypoint 7
+INFO     [it=16440 time=0:00:11.700000 | UAVProtocol 9] Mission: Going to waypoint 7
+INFO     [it=16911 time=0:00:12.030000 | UAVProtocol 11] Mission: Going to waypoint 7
+INFO     [it=18550 time=0:00:13.200000 | UAVProtocol 10] Mission: Going to waypoint 8
+INFO     [it=18623 time=0:00:13.250000 | UAVProtocol 9] Mission: Going to waypoint 8
+INFO     [it=19011 time=0:00:13.530000 | UAVProtocol 11] Mission: Going to waypoint 8
+INFO     [it=19717 time=0:00:14.030000 | UAVProtocol 10] Mission: Going to waypoint 9
+INFO     [it=20168 time=0:00:14.350000 | UAVProtocol 9] Mission: Going to waypoint 9
+INFO     [it=20416 time=0:00:14.530000 | UAVProtocol 11] Mission: Going to waypoint 9
+INFO     [it=22203 time=0:00:15.800000 | UAVProtocol 10] Mission: Going to waypoint 10
+INFO     [it=22699 time=0:00:16.150000 | UAVProtocol 9] Mission: Going to waypoint 10
+INFO     [it=23003 time=0:00:16.370000 | UAVProtocol 11] Mission: Going to waypoint 10
+INFO     [it=24306 time=0:00:17.300000 | UAVProtocol 10] Mission: Going to waypoint 11
+INFO     [it=24925 time=0:00:17.740000 | UAVProtocol 9] Mission: Going to waypoint 11
+INFO     [it=25257 time=0:00:17.980000 | UAVProtocol 11] Mission: Going to waypoint 11
+INFO     [it=27565 time=0:00:19.620000 | UAVProtocol 10] Mission: Stopping mission
+INFO     [it=28096 time=0:00:20 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=28099 time=0:00:20 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=28291 time=0:00:20.130000 | UAVProtocol 9] Mission: Stopping mission
+INFO     [it=28930 time=0:00:20.590000 | UAVProtocol 11] Mission: Stopping mission
+INFO     [it=30913 time=0:00:22 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=30917 time=0:00:22 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=30922 time=0:00:22 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=33739 time=0:00:24 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=33740 time=0:00:24 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=33745 time=0:00:24 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=34614 time=0:00:24.620000 | UAVProtocol 10] Restarting mission for uav 10
+INFO     [it=34614 time=0:00:24.620000 | UAVProtocol 10] Waypoints for uav 10: [(-60, 140, 20), (-190, 160, 20), (-310, -10, 20), (-290, -90, 20), (-210, -260, 20), (-60, -260, 20), (210, -140, 20), (290, -10, 20), (280, 80, 20), (190, 240, 20), (40, 240, 20), (0, 0, 20)]
+INFO     [it=34614 time=0:00:24.620000 | UAVProtocol 10] Mission: Starting mission
+INFO     [it=34618 time=0:00:24.620000 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=35333 time=0:00:25.130000 | UAVProtocol 9] Restarting mission for uav 9
+INFO     [it=35333 time=0:00:25.130000 | UAVProtocol 9] Waypoints for uav 9: [(-45, 155, 20), (-204, 146, 20), (-313, -13, 20), (-295, -95, 20), (-186, -236, 20), (-36, -236, 20), (213, -137, 20), (277, -23, 20), (286, 86, 20), (213, 263, 20), (27, 227, 20), (0, 0, 20)]
+INFO     [it=35333 time=0:00:25.130000 | UAVProtocol 9] Mission: Starting mission
+INFO     [it=35336 time=0:00:25.130000 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=36559 time=0:00:26 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=36774 time=0:00:26.150000 | UAVProtocol 10] Mission: Going to waypoint 1
+INFO     [it=37614 time=0:00:26.750000 | UAVProtocol 9] Mission: Going to waypoint 1
+INFO     [it=37969 time=0:00:27 | UAVProtocol 11] Restarting mission for uav 11
+INFO     [it=37969 time=0:00:27 | UAVProtocol 11] Waypoints for uav 11: [(-55, 145, 20), (-183, 167, 20), (-283, 17, 20), (-327, -127, 20), (-216, -266, 20), (-77, -277, 20), (205, -145, 20), (327, 27, 20), (283, 83, 20), (205, 255, 20), (77, 277, 20), (0, 0, 20)]
+INFO     [it=37969 time=0:00:27 | UAVProtocol 11] Mission: Starting mission
+INFO     [it=37971 time=0:00:27 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=38635 time=0:00:27.470000 | UAVProtocol 10] Mission: Going to waypoint 2
+INFO     [it=39855 time=0:00:28.340000 | UAVProtocol 9] Mission: Going to waypoint 2
+INFO     [it=40151 time=0:00:28.550000 | UAVProtocol 11] Mission: Going to waypoint 1
+INFO     [it=40246 time=0:00:28.620000 | UAVProtocol 10] Received 8 packets from sensor 1. Current count 8.
+INFO     [it=41555 time=0:00:29.550000 | UAVProtocol 10] Mission: Going to waypoint 3
+INFO     [it=41976 time=0:00:29.850000 | UAVProtocol 11] Mission: Going to waypoint 2
+INFO     [it=42573 time=0:00:30.270000 | UAVProtocol 9] Mission: Going to waypoint 3
+INFO     [it=42728 time=0:00:30.380000 | UAVProtocol 10] Mission: Going to waypoint 4
+INFO     [it=43751 time=0:00:31.110000 | UAVProtocol 9] Mission: Going to waypoint 4
+INFO     [it=44510 time=0:00:31.650000 | UAVProtocol 11] Mission: Going to waypoint 3
+INFO     [it=45366 time=0:00:32.260000 | UAVProtocol 10] Mission: Going to waypoint 5
+INFO     [it=46248 time=0:00:32.890000 | UAVProtocol 9] Mission: Going to waypoint 5
+INFO     [it=46638 time=0:00:33.160000 | UAVProtocol 11] Mission: Going to waypoint 4
+INFO     [it=47477 time=0:00:33.760000 | UAVProtocol 10] Mission: Going to waypoint 6
+INFO     [it=48361 time=0:00:34.390000 | UAVProtocol 9] Mission: Going to waypoint 6
+INFO     [it=49134 time=0:00:34.940000 | UAVProtocol 11] Mission: Going to waypoint 5
+INFO     [it=51093 time=0:00:36.330000 | UAVProtocol 11] Mission: Going to waypoint 6
+INFO     [it=51625 time=0:00:36.710000 | UAVProtocol 10] Mission: Going to waypoint 7
+INFO     [it=52129 time=0:00:37.070000 | UAVProtocol 9] Mission: Going to waypoint 7
+INFO     [it=53433 time=0:00:38 | UAVProtocol 9] Received 13 packets from sensor 5. Current count 13.
+INFO     [it=53774 time=0:00:38.240000 | UAVProtocol 10] Mission: Going to waypoint 8
+INFO     [it=53969 time=0:00:38.380000 | UAVProtocol 9] Mission: Going to waypoint 8
+INFO     [it=55061 time=0:00:39.150000 | UAVProtocol 10] Mission: Going to waypoint 9
+INFO     [it=55482 time=0:00:39.450000 | UAVProtocol 11] Mission: Going to waypoint 7
+INFO     [it=55508 time=0:00:39.470000 | UAVProtocol 9] Mission: Going to waypoint 9
+INFO     [it=57641 time=0:00:40.990000 | UAVProtocol 10] Mission: Going to waypoint 10
+INFO     [it=58202 time=0:00:41.390000 | UAVProtocol 9] Mission: Going to waypoint 10
+INFO     [it=58442 time=0:00:41.560000 | UAVProtocol 11] Mission: Going to waypoint 8
+INFO     [it=59447 time=0:00:42.270000 | UAVProtocol 11] Mission: Going to waypoint 9
+INFO     [it=59754 time=0:00:42.490000 | UAVProtocol 10] Mission: Going to waypoint 11
+INFO     [it=60862 time=0:00:43.280000 | UAVProtocol 9] Mission: Going to waypoint 11
+INFO     [it=62099 time=0:00:44.160000 | UAVProtocol 11] Mission: Going to waypoint 10
+INFO     [it=63163 time=0:00:44.920000 | UAVProtocol 10] Mission: Stopping mission
+INFO     [it=63930 time=0:00:45.460000 | UAVProtocol 11] Mission: Going to waypoint 11
+INFO     [it=64082 time=0:00:45.570000 | UAVProtocol 9] Mission: Stopping mission
+INFO     [it=64701 time=0:00:46 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=64703 time=0:00:46 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=65575 time=0:00:46.620000 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=66294 time=0:00:47.130000 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=67526 time=0:00:48 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=67527 time=0:00:48 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=67996 time=0:00:48.340000 | UAVProtocol 11] Mission: Stopping mission
+INFO     [it=68402 time=0:00:48.620000 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=68939 time=0:00:49 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=69126 time=0:00:49.130000 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=70352 time=0:00:50 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=70358 time=0:00:50 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=70359 time=0:00:50 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=71232 time=0:00:50.620000 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=71777 time=0:00:51 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=71792 time=0:00:51.010000 | UAVProtocol 9] Restarting mission for uav 9
+INFO     [it=71792 time=0:00:51.010000 | UAVProtocol 9] Waypoints for uav 9: [(-45, 155, 20), (-186, 164, 20), (-295, 5, 20), (-277, -77, 20), (-195, -245, 20), (-54, -254, 20), (195, -155, 20), (313, 13, 20), (313, 113, 20), (204, 254, 20), (45, 245, 20), (0, 0, 20)]
+INFO     [it=71792 time=0:00:51.010000 | UAVProtocol 9] Mission: Starting mission
+INFO     [it=71793 time=0:00:51.010000 | UAVProtocol 10] Restarting mission for uav 10
+INFO     [it=71793 time=0:00:51.010000 | UAVProtocol 10] Waypoints for uav 10: [(-70, 130, 20), (-220, 130, 20), (-280, 20, 20), (-280, -80, 20), (-220, -270, 20), (-70, -270, 20), (200, -150, 20), (280, -20, 20), (320, 120, 20), (180, 230, 20), (30, 230, 20), (0, 0, 20)]
+INFO     [it=71793 time=0:00:51.010000 | UAVProtocol 10] Mission: Starting mission
+INFO     [it=71796 time=0:00:51.010000 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=71801 time=0:00:51.010000 | UAVProtocol 10] Received acknowledgment from ground station
+INFO     [it=71974 time=0:00:51.130000 | UAVProtocol 9] Received acknowledgment from ground station
+INFO     [it=73199 time=0:00:52 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=73891 time=0:00:52.500000 | UAVProtocol 10] Mission: Going to waypoint 1
+INFO     [it=74086 time=0:00:52.640000 | UAVProtocol 9] Mission: Going to waypoint 1
+INFO     [it=74603 time=0:00:53 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=75083 time=0:00:53.340000 | UAVProtocol 11] Restarting mission for uav 11
+INFO     [it=75083 time=0:00:53.340000 | UAVProtocol 11] Waypoints for uav 11: [(-66, 134, 20), (-183, 167, 20), (-327, -27, 20), (-294, -94, 20), (-205, -255, 20), (-33, -233, 20), (227, -123, 20), (305, 5, 20), (327, 127, 20), (216, 266, 20), (55, 255, 20), (0, 0, 20)]
+INFO     [it=75083 time=0:00:53.340000 | UAVProtocol 11] Mission: Starting mission
+INFO     [it=75085 time=0:00:53.340000 | UAVProtocol 11] Received acknowledgment from ground station
+INFO     [it=76001 time=0:00:54 | UAVProtocol 10] Mission: Going to waypoint 2
+INFO     [it=76080 time=0:00:54.050000 | UAVProtocol 9] Mission: Going to waypoint 2
+INFO     [it=77202 time=0:00:54.850000 | UAVProtocol 11] Mission: Going to waypoint 1
+INFO     [it=77440 time=0:00:55.010000 | UAVProtocol 10] Received 9 packets from sensor 1. Current count 9.
+INFO     [it=77769 time=0:00:55.250000 | UAVProtocol 10] Mission: Going to waypoint 3
+INFO     [it=78790 time=0:00:55.980000 | UAVProtocol 9] Mission: Going to waypoint 3
+INFO     [it=78920 time=0:00:56.070000 | UAVProtocol 11] Mission: Going to waypoint 2
+INFO     [it=79173 time=0:00:56.250000 | UAVProtocol 10] Mission: Going to waypoint 4
+INFO     [it=79970 time=0:00:56.820000 | UAVProtocol 9] Mission: Going to waypoint 4
+INFO     [it=80723 time=0:00:57.340000 | UAVProtocol 11] Received 1 packets from sensor 1. Current count 1.
+INFO     [it=81978 time=0:00:58.240000 | UAVProtocol 10] Mission: Going to waypoint 5
+INFO     [it=82327 time=0:00:58.490000 | UAVProtocol 11] Mission: Going to waypoint 3
+INFO     [it=82607 time=0:00:58.690000 | UAVProtocol 9] Mission: Going to waypoint 5
+INFO     [it=83383 time=0:00:59.240000 | UAVProtocol 11] Mission: Going to waypoint 4
+INFO     [it=84085 time=0:00:59.740000 | UAVProtocol 10] Mission: Going to waypoint 6
+INFO     [it=84600 time=0:01:00.100000 | UAVProtocol 9] Mission: Going to waypoint 6
+INFO     [it=85874 time=0:00:00 | SensorProtocol 0 Finalization] Final packet count: 21
+INFO     [it=85874 time=0:00:00 | SensorProtocol 1 Finalization] Final packet count: 1
+INFO     [it=85874 time=0:00:00 | SensorProtocol 2 Finalization] Final packet count: 21
+INFO     [it=85874 time=0:00:00 | SensorProtocol 3 Finalization] Final packet count: 21
+INFO     [it=85874 time=0:00:00 | SensorProtocol 4 Finalization] Final packet count: 21
+INFO     [it=85874 time=0:00:00 | SensorProtocol 5 Finalization] Final packet count: 8
+INFO     [it=85874 time=0:00:00 | SensorProtocol 6 Finalization] Final packet count: 21
+INFO     [it=85874 time=0:00:00 | SensorProtocol 7 Finalization] Final packet count: 21
+INFO     [it=85874 time=0:00:00 | GroundStationProtocol 8 Finalization] Final packet count: 23
+INFO     [it=85874 time=0:00:00 | UAVProtocol 9 Finalization] Final packet count: 0
+INFO     [it=85874 time=0:00:00 | UAVProtocol 10 Finalization] Final packet count: 9
+INFO     [it=85874 time=0:00:00 | UAVProtocol 11 Finalization] Final packet count: 1
+INFO     [--------- Simulation finished ---------]
+INFO     Real time elapsed: 0:01:37.096397	Total iterations: 85874	Simulation time: 0:01:01
