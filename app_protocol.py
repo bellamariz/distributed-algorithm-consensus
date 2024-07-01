@@ -154,15 +154,24 @@ class UAVProtocol(IProtocol):
     # Calculate waypoints for each UAV - with offesets so they do not overlap
     def _init_waypoints(self) -> None:
         uavID = self.provider.get_id()
-        # offsetFactor = (uavID * random.randint(1, 8))
-        baseWaypoints = globals.BASE_WAYPOINTS_COORD_LIST_OPT3
+        # offsetFactor = (uavID * random.randint(5, 10))
+        # offsetFactor = uavID + (5 * random.randint(5, 15))
+        baseWaypoints = globals.BASE_WAYPOINTS_COORD_LIST
         uavWaypoints = []
+        midPoint = len(baseWaypoints)//2
 
         # Iterate over all base waypoint coords (except last, which is return to base)
-        for coord in baseWaypoints[:-1]:
-            offsetFactor = (uavID * random.randint(1, 3))
+        for coord in baseWaypoints[:midPoint]:
+            offsetFactor = (uavID * random.randint(5, 10))
             x = coord[0] - offsetFactor
             y = coord[1] - offsetFactor
+            z = coord[2]
+            uavWaypoints.append((x,y,z))
+
+        for coord in baseWaypoints[midPoint:-1]:
+            offsetFactor = (uavID * random.randint(5, 10))
+            x = coord[0] + offsetFactor
+            y = coord[1] + offsetFactor
             z = coord[2]
             uavWaypoints.append((x,y,z))
 
