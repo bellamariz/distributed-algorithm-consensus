@@ -140,13 +140,11 @@ class UAVProtocol(IProtocol):
     _log: logging.Logger
     total_received_packets: int
     waypoints: list
-    round_finished: bool
     _mission: MissionMobilityPlugin
 
     def initialize(self) -> None:
         self._log = logging.getLogger()
         self.total_received_packets = 0
-        self.round_finished = False
         self._mission = MissionMobilityPlugin(self, MissionMobilityConfiguration(
             speed=100,
         ))
@@ -160,7 +158,7 @@ class UAVProtocol(IProtocol):
             self._mission.start_mission(self.waypoints)
             self._ping_network()
 
-    # Calculate waypoints for each UAV - with offesets so they do not overlap
+    # Calculate waypoints for each UAV - with random offesets so they do not overlap
     def _init_waypoints(self) -> None:
         uavID = self.provider.get_id()
         baseWaypoints = globals.BASE_WAYPOINTS_COORD_LIST
@@ -216,14 +214,15 @@ class UAVProtocol(IProtocol):
 
         if general_message["sender_type"] == GeneralSender.SENSOR.value:
             self.total_received_packets += general_message["total_packets"]
-            # self._log.info(f"Received {general_message['total_packets']} packets from "
-            #                f"sensor {general_message['sender_id']}. Current count {self.total_received_packets}.")
+            self._log.info(f"Received {general_message['total_packets']} packets from "
+                           f"sensor {general_message['sender_id']}. Current count {self.total_received_packets}.")
         elif general_message["sender_type"] == GeneralSender.GROUND_STATION.value:
             self.total_received_packets = 0
             self._log.info("Received acknowledgment from ground station")
             
     # UAV implements handle_telemetry
     def handle_telemetry(self, telemetry: Telemetry) -> None:
+        # If reached end of mission at RESTART_COORD, move back to GROUND_BASE_COORD and start a timer for new mission
         if(telemetry.current_position == globals.RESTART_COORD) and (self.total_received_packets == 0):
             mobilityCmd = GotoCoordsMobilityCommand(
                 x=globals.GROUND_BASE_CORD[0],
