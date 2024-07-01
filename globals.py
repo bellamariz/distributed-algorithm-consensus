@@ -1,10 +1,11 @@
-MAX_NODES = 10
-SIMULATION_DURATION = 30
+MAX_NODES = 3
+SIMULATION_DURATION = 60
 SIMULATION_RANGE_X = (-400, 400)
 SIMULATION_RANGE_Y = (-400, 400)
 SIMULATION_RANGE_Z = (0, 150)
 COMMUNICATION_MEDIUM_RANGE = 30
-GROUND_BASE_CORD = (0,0,0)
+GROUND_BASE_CORD = (0, 0, 0)
+RESTART_COORD = (0, 0, 20)
 SENSORS_COORD_LIST = [
     (-150,  200,  0), # sensor 1
     (-250,   50,  0), # sensor 2
@@ -27,5 +28,5 @@ BASE_WAYPOINTS_COORD_LIST = [
     ( 250,   50,  20), # waypoint 9
     ( 150,  200,  20), # waypoint 10
     (   0,  200,  20), # waypoint 1
-    (   0,    0,  0),  # ground base
+    RESTART_COORD, # restart coord
 ]

@@ -13,8 +13,9 @@ def main():
 
     # Configuring simulation
     config = SimulationConfiguration(
-        duration=100,
+        duration=globals.SIMULATION_DURATION,
         real_time=True,
+        log_file=f"logs-nodes{globals.MAX_NODES}-dur{globals.SIMULATION_DURATION}.txt",
         execution_logging=True,
     )
 
@@ -30,7 +31,7 @@ def main():
     _mainLog.info(f"Placing ground station at pos {globals.GROUND_BASE_CORD}\n")
 
     # Instantiating UAVs at ground base
-    for _ in range(globals.MAX_NODES - 1):
+    for _ in range(globals.MAX_NODES):
         id = builder.add_node(UAVProtocol, globals.GROUND_BASE_CORD)
         _mainLog.info(f"Placing UAV {id} at ground station\n")
 
