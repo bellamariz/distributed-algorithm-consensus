@@ -8,7 +8,7 @@ import random
 from gradysim.protocol.interface import IProtocol
 from gradysim.protocol.messages.communication import SendMessageCommand, BroadcastMessageCommand
 from gradysim.protocol.messages.telemetry import Telemetry
-from gradysim.protocol.plugin.mission_mobility import MissionMobilityPlugin, MissionMobilityConfiguration, LoopMission
+from gradysim.protocol.plugin.mission_mobility import MissionMobilityPlugin, MissionMobilityConfiguration, GotoCoordsMobilityCommand
 
 ## Generalized message format to faciliate serialization that has fields necessary for all commuications
 class GeneralMessage(TypedDict):
@@ -138,30 +138,29 @@ class UAVProtocol(IProtocol):
     _log: logging.Logger
     total_received_packets: int
     waypoints: list
-    dumped_packets: bool
+    round_finished: bool
     _mission: MissionMobilityPlugin
 
     def initialize(self) -> None:
         self._log = logging.getLogger()
-        self._init_routine()
-
-    # Initialize new routine
-    def _init_routine(self) -> None:
         self.total_received_packets = 0
-        self.dumped_packets = False
+        self.round_finished = False
         self._mission = MissionMobilityPlugin(self, MissionMobilityConfiguration(
             speed=100,
         ))
 
-        self._init_waypoints()
-        self._mission.start_mission(self.waypoints)
-        self._ping_network()
+        self._start_routine()
+
+    # Start new routine
+    def _start_routine(self) -> None:
+        if(self._mission.is_idle):
+            self._init_waypoints()
+            self._mission.start_mission(self.waypoints)
+            self._ping_network()
 
     # Calculate waypoints for each UAV - with offesets so they do not overlap
     def _init_waypoints(self) -> None:
         uavID = self.provider.get_id()
-        # offsetFactor = (uavID * random.randint(5, 10))
-        # offsetFactor = uavID + (5 * random.randint(5, 15))
         baseWaypoints = globals.BASE_WAYPOINTS_COORD_LIST
         uavWaypoints = []
         midPoint = len(baseWaypoints)//2
@@ -198,41 +197,44 @@ class UAVProtocol(IProtocol):
         broadcastCmd = BroadcastMessageCommand(json.dumps(messageToAll))
         self.provider.send_communication_command(broadcastCmd)
 
-        self.provider.schedule_timer("uav_ping_network", self.provider.current_time() + 1)
+        self.provider.schedule_timer("uav_ping_network", self.provider.current_time() + 2)
     
     # UAV implements handle_timer
     def handle_timer(self, timer: str) -> None:
         if (timer == "uav_ping_network"):
             self._ping_network()
         elif (timer == "restart_mission"):
-            self._init_routine()
+            self._log.info(f"Restarting mission for uav {self.provider.get_id()}")
+            self._start_routine()
 
     # UAV implements handle_packet
     def handle_packet(self, message: str) -> None:
         general_message: GeneralMessage = json.loads(message)
-        self._log.info(report_message(general_message))
+        # self._log.info(report_message(general_message))
 
         if general_message["sender_type"] == GeneralSender.SENSOR.value:
             self.total_received_packets += general_message["total_packets"]
-            self._log.info(f"Received {general_message['total_packets']} packets from "
-                           f"sensor {general_message['sender_id']}. Current count {self.total_received_packets}.")
+            # self._log.info(f"Received {general_message['total_packets']} packets from "
+            #                f"sensor {general_message['sender_id']}. Current count {self.total_received_packets}.")
         elif general_message["sender_type"] == GeneralSender.GROUND_STATION.value:
             self.total_received_packets = 0
-            self.dumped_packets = True
             self._log.info("Received acknowledgment from ground station")
-    
+            
     # UAV implements handle_telemetry
     def handle_telemetry(self, telemetry: Telemetry) -> None:
-        if(telemetry.current_position == globals.GROUND_BASE_CORD) and (self.dumped_packets):
-            self.provider.schedule_timer("restart_mission", self.provider.current_time() + 7)
+        if(telemetry.current_position == globals.RESTART_COORD) and (self.total_received_packets == 0):
+            mobilityCmd = GotoCoordsMobilityCommand(
+                x=globals.GROUND_BASE_CORD[0],
+                y=globals.GROUND_BASE_CORD[0],
+                z=globals.GROUND_BASE_CORD[0],
+            )
+            self.provider.send_mobility_command(mobilityCmd)
+            self.provider.schedule_timer("restart_mission", self.provider.current_time() + 5)
 
     # UAV implements finish
     def finish(self) -> None:
         self._log.info(f"Final packet count: {self.total_received_packets}")
 
 
-
 ## TODO: Implementation for the consensus
 ## TODO: If UAV is closest to Sensor, it will receive its packets
-class ConsensusProtocol(IProtocol):
-    _log: logging.Logger
