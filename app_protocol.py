@@ -335,7 +335,7 @@ class UAVProtocol(IProtocol):
                         # Receive packets
                         self.total_received_packets += msg["total_packets"]
                         self._log.info(f"Received {msg['total_packets']} packets from sensor {msg['sender_id']}. Current count {self.total_received_packets}.")
-                        self.provider.schedule_timer("receive_packets_from_sensor", self.provider.current_time() + 3)
+                        self.provider.schedule_timer("wait_until_packets_received", self.provider.current_time() + 3)
 
             else: # This UAV received coordinates from sensor and will calculate distances from it
                 if (self._coordHost != self._id):
@@ -390,13 +390,19 @@ class UAVProtocol(IProtocol):
             elif (msg["decision"] >= 0):
                 # If UAV was waiting for consensus
                 if self._paused:
+                    # If this UAV was the decision
                     if (msg["decision"] == self._id):
                         self._broadcast_decision(msg["decision"])
                     else:
-                        # Resume mobility
-                        self._paused = False
-                        lastWaypoint = self.currentWaypointIndex
-                        self._mission.start_mission(self.waypoints[lastWaypoint:])
+                        # If the decision was not the coordinating host
+                        if (msg["decision"] != self._coordHost):
+                            # Resume mobility
+                            self._paused = False
+                            lastWaypoint = self.currentWaypointIndex
+                            self._mission.start_mission(self.waypoints[lastWaypoint:])
+                        else:
+                            self.provider.schedule_timer("wait_until_packets_received", self.provider.current_time() + 3)
+
                             
 
     # UAV implements handle_timer
@@ -406,7 +412,7 @@ class UAVProtocol(IProtocol):
         elif (timer == "restart_mission"):
             self._log.info(f"Restarting mission for uav")
             self._start_routine()
-        elif (timer == "receive_packets_from_sensor"):
+        elif (timer == "wait_until_packets_received"):
             # Resume mobility
             self._paused = False
             lastWaypoint = self.currentWaypointIndex
@@ -446,7 +452,9 @@ class UAVProtocol(IProtocol):
             # self._log.info(f"Dict for uav: {self.uavPositions}")
 
         # If reached end of mission at RESTART_COORD, move back to GROUND_BASE_COORD and start a timer for new mission
-        if(telemetry.current_position == globals.RESTART_COORD) and (self.total_received_packets == 0):
+        if(telemetry.current_position == globals.RESTART_COORD):
+            self._ping_network()
+            
             mobilityCmd = GotoCoordsMobilityCommand(
                 x=globals.GROUND_BASE_CORD[0],
                 y=globals.GROUND_BASE_CORD[0],
