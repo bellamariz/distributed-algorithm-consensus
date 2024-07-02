@@ -7,8 +7,6 @@ from app_protocol import SensorProtocol, UAVProtocol, GroundStationProtocol
 
 import globals
 
-global uavIDs
-
 def main():
     # Configuring simulation
     config = SimulationConfiguration(
@@ -23,7 +21,7 @@ def main():
     # Instantiating ground station at a fixed position, ID = 0
     builder.add_node(GroundStationProtocol, globals.GROUND_BASE_CORD)
 
-    # Instantiating UAVs at ground base, IDs = 1,2,3... --> (1, MAX_NODES+)
+    # Instantiating UAVs at ground base, IDs = 1,2,3... --> (1, MAX_NODES)
     for _ in range(globals.MAX_NODES):
         builder.add_node(UAVProtocol, globals.GROUND_BASE_CORD)
 
