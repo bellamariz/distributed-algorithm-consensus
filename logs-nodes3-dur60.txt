@@ -799,3 +799,653 @@ INFO     [it=85267 time=0:00:00 | SensorProtocol 10 Finalization] Final packet c
 INFO     [it=85267 time=0:00:00 | SensorProtocol 11 Finalization] Final packet count: 61
 INFO     [--------- Simulation finished ---------]
 INFO     Real time elapsed: 0:01:36.106009	Total iterations: 85267	Simulation time: 0:01:00
+
+
+
+
+
+
+
+INFO     [--------- Simulation started ---------]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Waypoints for uav: [(-6, 194, 10), (-157, 193, 10), (-257, 43, 10), (-255, -55, 10), (-154, -204, 10), (-3, -203, 10), (157, -193, 10), (254, -46, 10), (255, 55, 10), (156, 206, 10), (4, 204, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Waypoints for uav: [(-6, 194, 10), (-158, 192, 10), (-258, 42, 10), (-256, -56, 10), (-160, -210, 10), (-6, -206, 10), (160, -190, 10), (258, -42, 10), (258, 58, 10), (162, 212, 10), (14, 214, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Waypoints for uav: [(-9, 191, 10), (-162, 188, 10), (-265, 35, 10), (-268, -68, 10), (-162, -212, 10), (-18, -218, 10), (159, -191, 10), (262, -38, 10), (265, 65, 10), (171, 221, 10), (21, 221, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=1 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=8 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Paused: False
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Paused: False
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Paused: False
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=2696 time=0:00:01.910000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=2734 time=0:00:01.940000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=2735 time=0:00:01.940000 | UAVProtocol 2] Mission: Going to waypoint 1
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Paused: False
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Paused: False
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Paused: False
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Paused: False
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4250 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 2
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Coordinating host pausing network and starting consensus
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=4259 time=0:00:03 | UAVProtocol 3] Paused: True
+INFO     [it=4261 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 3
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Paused: False
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=4268 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 1
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=4890 time=0:00:03.450000 | UAVProtocol 1] Mission: Going to waypoint 2
+INFO     [it=4905 time=0:00:03.460000 | UAVProtocol 2] Mission: Going to waypoint 2
+INFO     [it=5671 time=0:00:04 | UAVProtocol 1] Paused: False
+INFO     [it=5671 time=0:00:04 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=5673 time=0:00:04 | UAVProtocol 2] Paused: False
+INFO     [it=5673 time=0:00:04 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=5675 time=0:00:04 | SensorProtocol 4] Sensor sent coordinates to UAV 1
+INFO     [it=5678 time=0:00:04 | SensorProtocol 4] Sensor sent coordinates to UAV 2
+INFO     [it=5679 time=0:00:04 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=5681 time=0:00:04 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=7095 time=0:00:05 | UAVProtocol 1] Paused: False
+INFO     [it=7095 time=0:00:05 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=7096 time=0:00:05 | UAVProtocol 2] Paused: False
+INFO     [it=7096 time=0:00:05 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=7098 time=0:00:05 | SensorProtocol 5] Sensor sent coordinates to UAV 1
+INFO     [it=7100 time=0:00:05 | SensorProtocol 5] Sensor sent coordinates to UAV 2
+INFO     [it=7101 time=0:00:05 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=7102 time=0:00:05 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=7446 time=0:00:05.250000 | UAVProtocol 1] Mission: Going to waypoint 3
+INFO     [it=7461 time=0:00:05.260000 | UAVProtocol 2] Mission: Going to waypoint 3
+INFO     [it=8510 time=0:00:06 | UAVProtocol 1] Paused: False
+INFO     [it=8510 time=0:00:06 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=8513 time=0:00:06 | SensorProtocol 6] Sensor sent coordinates to UAV 1
+INFO     [it=8515 time=0:00:06 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=8519 time=0:00:06 | UAVProtocol 2] Paused: False
+INFO     [it=8519 time=0:00:06 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=8521 time=0:00:06 | SensorProtocol 6] Sensor sent coordinates to UAV 2
+INFO     [it=8522 time=0:00:06 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=8834 time=0:00:06.230000 | UAVProtocol 1] Mission: Going to waypoint 4
+INFO     [it=8849 time=0:00:06.240000 | UAVProtocol 2] Mission: Going to waypoint 4
+INFO     [it=9924 time=0:00:07 | UAVProtocol 2] Paused: False
+INFO     [it=9924 time=0:00:07 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=9929 time=0:00:07 | UAVProtocol 1] Paused: False
+INFO     [it=9929 time=0:00:07 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=11340 time=0:00:08 | UAVProtocol 3] Proposals for consensus: {2: [3, 1253.30397], 1: [3, 1253.30397]}
+INFO     [it=11340 time=0:00:08 | UAVProtocol 3] Decision for consensus: (3, 1253.30397)
+INFO     [it=11341 time=0:00:08 | UAVProtocol 2] Paused: False
+INFO     [it=11341 time=0:00:08 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=11342 time=0:00:08 | SensorProtocol 4] Sensor sent 9 packets to UAV 3
+INFO     [it=11344 time=0:00:08 | SensorProtocol 7] Sensor sent coordinates to UAV 2
+INFO     [it=11345 time=0:00:08 | UAVProtocol 3] Received 9 packets from sensor 4. Current count 9.
+INFO     [it=11345 time=0:00:08 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=11346 time=0:00:08 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=11349 time=0:00:08 | UAVProtocol 1] Paused: False
+INFO     [it=11349 time=0:00:08 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=11352 time=0:00:08 | SensorProtocol 7] Sensor sent coordinates to UAV 1
+INFO     [it=11353 time=0:00:08 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=11359 time=0:00:08.010000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=11385 time=0:00:08.030000 | UAVProtocol 1] Mission: Going to waypoint 5
+INFO     [it=11428 time=0:00:08.060000 | UAVProtocol 2] Mission: Going to waypoint 5
+INFO     [it=12756 time=0:00:09 | UAVProtocol 1] Paused: False
+INFO     [it=12756 time=0:00:09 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=12760 time=0:00:09 | UAVProtocol 2] Paused: False
+INFO     [it=12760 time=0:00:09 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=13511 time=0:00:09.540000 | UAVProtocol 1] Mission: Going to waypoint 6
+INFO     [it=13596 time=0:00:09.600000 | UAVProtocol 2] Mission: Going to waypoint 6
+INFO     [it=13947 time=0:00:09.850000 | UAVProtocol 3] Mission: Going to waypoint 2
+INFO     [it=14167 time=0:00:10 | UAVProtocol 1] Paused: False
+INFO     [it=14167 time=0:00:10 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=14168 time=0:00:10 | UAVProtocol 2] Paused: False
+INFO     [it=14168 time=0:00:10 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=15401 time=0:00:10.880000 | UAVProtocol 3] Mission: Going to waypoint 3
+INFO     [it=15579 time=0:00:11 | UAVProtocol 1] Paused: False
+INFO     [it=15579 time=0:00:11 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=15583 time=0:00:11 | SensorProtocol 8] Sensor sent coordinates to UAV 1
+INFO     [it=15585 time=0:00:11 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=15586 time=0:00:11 | UAVProtocol 2] Paused: False
+INFO     [it=15586 time=0:00:11 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=15589 time=0:00:11 | SensorProtocol 8] Sensor sent coordinates to UAV 2
+INFO     [it=15591 time=0:00:11 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=15779 time=0:00:11.140000 | UAVProtocol 1] Mission: Going to waypoint 7
+INFO     [it=15962 time=0:00:11.270000 | UAVProtocol 2] Mission: Going to waypoint 7
+INFO     [it=16997 time=0:00:12 | UAVProtocol 2] Paused: False
+INFO     [it=16997 time=0:00:12 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=17002 time=0:00:12 | UAVProtocol 1] Paused: False
+INFO     [it=17002 time=0:00:12 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=17935 time=0:00:12.670000 | UAVProtocol 3] Mission: Going to waypoint 4
+INFO     [it=18255 time=0:00:12.900000 | UAVProtocol 1] Mission: Going to waypoint 8
+INFO     [it=18408 time=0:00:13 | UAVProtocol 1] Paused: False
+INFO     [it=18408 time=0:00:13 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=18410 time=0:00:13 | UAVProtocol 2] Paused: False
+INFO     [it=18410 time=0:00:13 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=18412 time=0:00:13 | SensorProtocol 9] Sensor sent coordinates to UAV 1
+INFO     [it=18414 time=0:00:13 | SensorProtocol 9] Sensor sent coordinates to UAV 2
+INFO     [it=18415 time=0:00:13 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=18416 time=0:00:13 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=18482 time=0:00:13.050000 | UAVProtocol 2] Mission: Going to waypoint 8
+INFO     [it=19685 time=0:00:13.910000 | UAVProtocol 1] Mission: Going to waypoint 9
+INFO     [it=19826 time=0:00:14 | UAVProtocol 2] Paused: False
+INFO     [it=19826 time=0:00:14 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=19827 time=0:00:14 | UAVProtocol 1] Paused: False
+INFO     [it=19827 time=0:00:14 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=19829 time=0:00:14 | SensorProtocol 10] Sensor sent coordinates to UAV 2
+INFO     [it=19831 time=0:00:14 | SensorProtocol 10] Sensor sent coordinates to UAV 1
+INFO     [it=19832 time=0:00:14 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=19833 time=0:00:14 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=19898 time=0:00:14.050000 | UAVProtocol 2] Mission: Going to waypoint 9
+INFO     [it=19983 time=0:00:14.110000 | UAVProtocol 3] Mission: Going to waypoint 5
+INFO     [it=21239 time=0:00:15 | UAVProtocol 2] Paused: False
+INFO     [it=21239 time=0:00:15 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=21242 time=0:00:15 | UAVProtocol 1] Paused: False
+INFO     [it=21242 time=0:00:15 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=22247 time=0:00:15.720000 | UAVProtocol 1] Mission: Going to waypoint 10
+INFO     [it=22444 time=0:00:15.860000 | UAVProtocol 2] Mission: Going to waypoint 10
+INFO     [it=22501 time=0:00:15.900000 | UAVProtocol 3] Mission: Going to waypoint 6
+INFO     [it=22652 time=0:00:16 | UAVProtocol 1] Paused: False
+INFO     [it=22652 time=0:00:16 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=22656 time=0:00:16 | SensorProtocol 11] Sensor sent coordinates to UAV 1
+INFO     [it=22658 time=0:00:16 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=22659 time=0:00:16 | UAVProtocol 2] Paused: False
+INFO     [it=22659 time=0:00:16 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=22662 time=0:00:16 | SensorProtocol 11] Sensor sent coordinates to UAV 2
+INFO     [it=22664 time=0:00:16 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=24066 time=0:00:17 | UAVProtocol 2] Paused: False
+INFO     [it=24066 time=0:00:17 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=24072 time=0:00:17 | UAVProtocol 1] Paused: False
+INFO     [it=24072 time=0:00:17 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=24403 time=0:00:17.240000 | UAVProtocol 1] Mission: Going to waypoint 11
+INFO     [it=24544 time=0:00:17.340000 | UAVProtocol 2] Mission: Going to waypoint 11
+INFO     [it=25119 time=0:00:17.750000 | UAVProtocol 3] Mission: Going to waypoint 7
+INFO     [it=25466 time=0:00:18 | UAVProtocol 1] Paused: False
+INFO     [it=25466 time=0:00:18 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=25472 time=0:00:18 | UAVProtocol 2] Paused: False
+INFO     [it=25472 time=0:00:18 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=26573 time=0:00:18.780000 | UAVProtocol 3] Mission: Going to waypoint 8
+INFO     [it=26877 time=0:00:19 | UAVProtocol 1] Paused: False
+INFO     [it=26877 time=0:00:19 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=26878 time=0:00:19 | UAVProtocol 2] Paused: False
+INFO     [it=26878 time=0:00:19 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=26881 time=0:00:19 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=26884 time=0:00:19 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=27287 time=0:00:19.280000 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=27568 time=0:00:19.480000 | UAVProtocol 2] Mission: Stopping mission
+INFO     [it=28293 time=0:00:20 | UAVProtocol 2] Paused: False
+INFO     [it=28293 time=0:00:20 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=28296 time=0:00:20 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=28304 time=0:00:20 | UAVProtocol 1] Paused: False
+INFO     [it=28304 time=0:00:20 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=28305 time=0:00:20 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=29159 time=0:00:20.600000 | UAVProtocol 3] Mission: Going to waypoint 9
+INFO     [it=29708 time=0:00:21 | UAVProtocol 2] Paused: False
+INFO     [it=29708 time=0:00:21 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=29709 time=0:00:21 | UAVProtocol 1] Paused: False
+INFO     [it=29709 time=0:00:21 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=29711 time=0:00:21 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=29719 time=0:00:21 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=31124 time=0:00:22 | UAVProtocol 1] Paused: False
+INFO     [it=31124 time=0:00:22 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=31127 time=0:00:22 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=31131 time=0:00:22 | UAVProtocol 2] Paused: False
+INFO     [it=31131 time=0:00:22 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=31133 time=0:00:22 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=31291 time=0:00:22.100000 | UAVProtocol 3] Mission: Going to waypoint 10
+INFO     [it=32540 time=0:00:23 | UAVProtocol 2] Paused: False
+INFO     [it=32540 time=0:00:23 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=32543 time=0:00:23 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=32548 time=0:00:23 | UAVProtocol 1] Paused: False
+INFO     [it=32548 time=0:00:23 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=32550 time=0:00:23 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=33956 time=0:00:24 | UAVProtocol 1] Paused: False
+INFO     [it=33956 time=0:00:24 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=33959 time=0:00:24 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=33965 time=0:00:24 | UAVProtocol 2] Paused: False
+INFO     [it=33965 time=0:00:24 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=33967 time=0:00:24 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=34380 time=0:00:24.290000 | UAVProtocol 1] Restarting mission for uav
+INFO     [it=34380 time=0:00:24.290000 | UAVProtocol 1] Waypoints for uav: [(-5, 195, 10), (-153, 197, 10), (-253, 47, 10), (-253, -53, 10), (-155, -205, 10), (-6, -206, 10), (156, -194, 10), (255, -45, 10), (255, 55, 10), (153, 203, 10), (7, 207, 10), (0, 0, 10)]
+INFO     [it=34380 time=0:00:24.290000 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=34380 time=0:00:24.290000 | UAVProtocol 1] Paused: False
+INFO     [it=34380 time=0:00:24.290000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=34381 time=0:00:24.290000 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=34438 time=0:00:24.320000 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=34665 time=0:00:24.490000 | UAVProtocol 2] Restarting mission for uav
+INFO     [it=34665 time=0:00:24.490000 | UAVProtocol 2] Waypoints for uav: [(-14, 186, 10), (-164, 186, 10), (-264, 36, 10), (-258, -58, 10), (-158, -208, 10), (-14, -214, 10), (162, -188, 10), (264, -36, 10), (258, 58, 10), (164, 214, 10), (6, 206, 10), (0, 0, 10)]
+INFO     [it=34665 time=0:00:24.490000 | UAVProtocol 2] Mission: Starting mission
+INFO     [it=34665 time=0:00:24.490000 | UAVProtocol 2] Paused: False
+INFO     [it=34665 time=0:00:24.490000 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=34666 time=0:00:24.490000 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=35385 time=0:00:25 | UAVProtocol 1] Paused: False
+INFO     [it=35385 time=0:00:25 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=35394 time=0:00:25 | UAVProtocol 2] Paused: False
+INFO     [it=35394 time=0:00:25 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=35395 time=0:00:25 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=35805 time=0:00:25.290000 | UAVProtocol 1] Paused: False
+INFO     [it=35805 time=0:00:25.290000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=36087 time=0:00:25.490000 | UAVProtocol 2] Paused: False
+INFO     [it=36087 time=0:00:25.490000 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=36804 time=0:00:26 | UAVProtocol 2] Paused: False
+INFO     [it=36804 time=0:00:26 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=36810 time=0:00:26 | UAVProtocol 1] Paused: False
+INFO     [it=36810 time=0:00:26 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=37140 time=0:00:26.230000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [--------- Simulation started ---------]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Waypoints for uav: [(-3, 197, 10), (-156, 194, 10), (-254, 46, 10), (-255, -55, 10), (-156, -206, 10), (-7, -207, 10), (157, -193, 10), (256, -44, 10), (254, 54, 10), (153, 203, 10), (4, 204, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Waypoints for uav: [(-12, 188, 10), (-156, 194, 10), (-256, 44, 10), (-256, -56, 10), (-164, -214, 10), (-6, -206, 10), (160, -190, 10), (260, -40, 10), (258, 58, 10), (160, 210, 10), (6, 206, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Waypoints for uav: [(-21, 179, 10), (-168, 182, 10), (-268, 32, 10), (-268, -68, 10), (-171, -221, 10), (-18, -218, 10), (162, -188, 10), (259, -41, 10), (271, 71, 10), (171, 221, 10), (18, 218, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=1 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=8 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Paused: False
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Paused: False
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Paused: False
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=2556 time=0:00:01.810000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=2665 time=0:00:01.890000 | UAVProtocol 2] Mission: Going to waypoint 1
+INFO     [it=2776 time=0:00:01.970000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Paused: False
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Paused: False
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Paused: False
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Paused: False
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4250 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 2
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Mission: Stopping mission
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Pausing mobility due to consensus
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Coordinating host pausing network and starting consensus
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=4259 time=0:00:03 | UAVProtocol 3] Paused: True
+INFO     [it=4261 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 3
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Paused: False
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=4268 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 1
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Pausing mobility due to consensus
+INFO     [it=5671 time=0:00:04 | UAVProtocol 1] Paused: True
+INFO     [it=5673 time=0:00:04 | UAVProtocol 2] Paused: True
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Proposals for consensus: {2: [2, 888.6554], 1: [3, 545.41282]}
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Decision for consensus: (3, 545.41282)
+INFO     [--------- Simulation started ---------]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Waypoints for uav: [(-7, 193, 10), (-155, 195, 10), (-255, 45, 10), (-257, -57, 10), (-156, -206, 10), (-5, -205, 10), (157, -193, 10), (256, -44, 10), (257, 57, 10), (156, 206, 10), (4, 204, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Waypoints for uav: [(-14, 186, 10), (-162, 188, 10), (-262, 38, 10), (-264, -64, 10), (-160, -210, 10), (-10, -210, 10), (160, -190, 10), (260, -40, 10), (256, 56, 10), (156, 206, 10), (12, 212, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Waypoints for uav: [(-9, 191, 10), (-168, 182, 10), (-265, 35, 10), (-259, -59, 10), (-162, -212, 10), (-21, -221, 10), (159, -191, 10), (265, -35, 10), (259, 59, 10), (159, 209, 10), (21, 221, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=1 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=8 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Paused: False
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Paused: False
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Paused: False
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=2637 time=0:00:01.870000 | UAVProtocol 2] Mission: Going to waypoint 1
+INFO     [it=2696 time=0:00:01.910000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=2720 time=0:00:01.930000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Paused: False
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Paused: False
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Paused: False
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Paused: False
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4250 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 2
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Mission: Stopping mission
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Pausing mobility due to consensus
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Coordinating host pausing network and starting consensus
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=4259 time=0:00:03 | UAVProtocol 3] Paused: True
+INFO     [it=4261 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 3
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Paused: False
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=4268 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 1
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Pausing mobility due to consensus
+INFO     [it=5671 time=0:00:04 | UAVProtocol 1] Paused: True
+INFO     [it=5673 time=0:00:04 | UAVProtocol 2] Paused: True
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Proposals for consensus: {2: [2, 785.05319], 1: [2, 785.05319]}
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Decision for consensus: (2, 785.05319)
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=11311 time=0:00:08 | SensorProtocol 4] Sensor sent 9 packets to UAV 2
+INFO     [it=11312 time=0:00:08 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=11314 time=0:00:08 | SensorProtocol 4] Sensor sent 0 packets to UAV 2
+INFO     [it=11315 time=0:00:08 | UAVProtocol 2] Received 9 packets from sensor 4. Current count 9.
+INFO     [it=11315 time=0:00:08 | UAVProtocol 2] Mission: Starting mission
+INFO     [it=11325 time=0:00:08.010000 | UAVProtocol 2] Mission: Going to waypoint 1
+INFO     [it=11328 time=0:00:08.010000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=11330 time=0:00:08.010000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=13800 time=0:00:09.770000 | UAVProtocol 3] Mission: Going to waypoint 2
+INFO     [it=13853 time=0:00:09.810000 | UAVProtocol 2] Mission: Going to waypoint 2
+INFO     [it=13858 time=0:00:09.810000 | UAVProtocol 1] Mission: Going to waypoint 2
+INFO     [it=15124 time=0:00:10.710000 | UAVProtocol 3] Mission: Going to waypoint 3
+INFO     [it=15289 time=0:00:10.830000 | UAVProtocol 2] Mission: Going to waypoint 3
+INFO     [it=15294 time=0:00:10.830000 | UAVProtocol 1] Mission: Going to waypoint 3
+INFO     [it=17674 time=0:00:12.520000 | UAVProtocol 3] Mission: Going to waypoint 4
+INFO     [it=17811 time=0:00:12.620000 | UAVProtocol 2] Mission: Going to waypoint 4
+INFO     [it=17830 time=0:00:12.630000 | UAVProtocol 1] Mission: Going to waypoint 4
+INFO     [it=19670 time=0:00:13.940000 | UAVProtocol 3] Mission: Going to waypoint 5
+INFO     [it=19927 time=0:00:14.120000 | UAVProtocol 2] Mission: Going to waypoint 5
+INFO     [it=19960 time=0:00:14.140000 | UAVProtocol 1] Mission: Going to waypoint 5
+INFO     [it=22234 time=0:00:15.760000 | UAVProtocol 3] Mission: Going to waypoint 6
+INFO     [it=22250 time=0:00:15.770000 | UAVProtocol 1] Mission: Going to waypoint 6
+INFO     [it=22329 time=0:00:15.830000 | UAVProtocol 2] Mission: Going to waypoint 6
+INFO     [it=24772 time=0:00:17.560000 | UAVProtocol 1] Mission: Going to waypoint 7
+INFO     [it=24879 time=0:00:17.640000 | UAVProtocol 2] Mission: Going to waypoint 7
+INFO     [it=24896 time=0:00:17.650000 | UAVProtocol 3] Mission: Going to waypoint 7
+INFO     [it=26194 time=0:00:18.570000 | UAVProtocol 1] Mission: Going to waypoint 8
+INFO     [it=26220 time=0:00:18.590000 | UAVProtocol 3] Mission: Going to waypoint 8
+INFO     [it=26231 time=0:00:18.600000 | UAVProtocol 2] Mission: Going to waypoint 8
+INFO     [it=28730 time=0:00:20.370000 | UAVProtocol 1] Mission: Going to waypoint 9
+INFO     [it=28756 time=0:00:20.390000 | UAVProtocol 3] Mission: Going to waypoint 9
+INFO     [it=28767 time=0:00:20.400000 | UAVProtocol 2] Mission: Going to waypoint 9
+INFO     [it=30710 time=0:00:21.780000 | UAVProtocol 3] Mission: Going to waypoint 10
+INFO     [it=30791 time=0:00:21.840000 | UAVProtocol 2] Mission: Going to waypoint 10
+INFO     [it=30866 time=0:00:21.890000 | UAVProtocol 1] Mission: Going to waypoint 10
+INFO     [it=33738 time=0:00:23.930000 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=33777 time=0:00:23.960000 | UAVProtocol 2] Mission: Stopping mission
+INFO     [it=33840 time=0:00:24 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=40784 time=0:00:28.940000 | UAVProtocol 1] Restarting mission for uav
+INFO     [it=40784 time=0:00:28.940000 | UAVProtocol 1] Waypoints for uav: [(-4, 196, 10), (-153, 197, 10), (-257, 43, 10), (-255, -55, 10), (-153, -203, 10), (-7, -207, 10), (155, -195, 10), (253, -47, 10), (256, 56, 10), (154, 204, 10), (5, 205, 10), (0, 0, 10)]
+INFO     [it=40784 time=0:00:28.940000 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=40784 time=0:00:28.940000 | UAVProtocol 1] Paused: False
+INFO     [it=40784 time=0:00:28.940000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=40785 time=0:00:28.940000 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=40881 time=0:00:29 | UAVProtocol 3] Restarting mission for uav
+INFO     [it=40881 time=0:00:29 | UAVProtocol 3] Waypoints for uav: [(-9, 191, 10), (-171, 179, 10), (-262, 38, 10), (-268, -68, 10), (-165, -215, 10), (-9, -209, 10), (159, -191, 10), (271, -29, 10), (271, 71, 10), (171, 221, 10), (12, 212, 10), (0, 0, 10)]
+INFO     [it=40881 time=0:00:29 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=40881 time=0:00:29 | UAVProtocol 3] Paused: False
+INFO     [it=40881 time=0:00:29 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=40882 time=0:00:29 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=42202 time=0:00:29.940000 | UAVProtocol 1] Paused: False
+INFO     [it=42202 time=0:00:29.940000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=42296 time=0:00:30 | UAVProtocol 3] Paused: False
+INFO     [it=42296 time=0:00:30 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=43547 time=0:00:30.890000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=43563 time=0:00:30.900000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=43614 time=0:00:30.940000 | UAVProtocol 1] Paused: False
+INFO     [it=43614 time=0:00:30.940000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=43708 time=0:00:31 | UAVProtocol 3] Paused: False
+INFO     [it=43708 time=0:00:31 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=45026 time=0:00:31.940000 | UAVProtocol 1] Paused: False
+INFO     [it=45026 time=0:00:31.940000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=45028 time=0:00:31.940000 | SensorProtocol 4] Sensor sent coordinates to UAV 1
+INFO     [it=45029 time=0:00:31.940000 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=45029 time=0:00:31.940000 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=45029 time=0:00:31.940000 | UAVProtocol 1] Pausing mobility due to consensus
+INFO     [it=45030 time=0:00:31.940000 | UAVProtocol 3] Coordinating host pausing network and starting consensus
+INFO     [it=45030 time=0:00:31.940000 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=45032 time=0:00:31.940000 | SensorProtocol 4] Sensor sent coordinates to UAV 3
+INFO     [it=45126 time=0:00:32 | UAVProtocol 3] Paused: True
+INFO     [it=46443 time=0:00:32.940000 | UAVProtocol 1] Paused: True
+INFO     [it=52076 time=0:00:36.940000 | UAVProtocol 3] Proposals for consensus: {1: [1, 1876.24594]}
+INFO     [it=52076 time=0:00:36.940000 | UAVProtocol 3] Decision for consensus: (1, 1876.24594)
+INFO     [it=52076 time=0:00:36.940000 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=52078 time=0:00:36.940000 | SensorProtocol 4] Sensor sent 28 packets to UAV 1
+INFO     [it=52080 time=0:00:36.940000 | SensorProtocol 4] Sensor sent 0 packets to UAV 1
+INFO     [it=52081 time=0:00:36.940000 | UAVProtocol 1] Received 28 packets from sensor 4. Current count 28.
+INFO     [it=52081 time=0:00:36.940000 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=52088 time=0:00:36.940000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=52092 time=0:00:36.940000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=54457 time=0:00:38.620000 | UAVProtocol 3] Mission: Going to waypoint 2
+INFO     [it=54711 time=0:00:38.800000 | UAVProtocol 1] Mission: Going to waypoint 2
+INFO     [it=55949 time=0:00:39.680000 | UAVProtocol 3] Mission: Going to waypoint 3
+INFO     [it=56091 time=0:00:39.780000 | UAVProtocol 1] Mission: Going to waypoint 3
+INFO     [it=58485 time=0:00:41.480000 | UAVProtocol 3] Mission: Going to waypoint 4
+INFO     [it=58627 time=0:00:41.580000 | UAVProtocol 1] Mission: Going to waypoint 4
+INFO     [it=60685 time=0:00:43.040000 | UAVProtocol 3] Mission: Going to waypoint 5
+INFO     [it=60687 time=0:00:43.040000 | UAVProtocol 1] Mission: Going to waypoint 5
+INFO     [it=62963 time=0:00:44.660000 | UAVProtocol 1] Mission: Going to waypoint 6
+INFO     [it=63059 time=0:00:44.730000 | UAVProtocol 3] Mission: Going to waypoint 6
+INFO     [it=65471 time=0:00:46.440000 | UAVProtocol 1] Mission: Going to waypoint 7
+INFO     [it=65833 time=0:00:46.700000 | UAVProtocol 3] Mission: Going to waypoint 7
+INFO     [it=66921 time=0:00:47.470000 | UAVProtocol 1] Mission: Going to waypoint 8
+INFO     [it=67241 time=0:00:47.700000 | UAVProtocol 3] Mission: Going to waypoint 8
+INFO     [it=69457 time=0:00:49.270000 | UAVProtocol 1] Mission: Going to waypoint 9
+INFO     [it=69777 time=0:00:49.500000 | UAVProtocol 3] Mission: Going to waypoint 9
+INFO     [it=71551 time=0:00:50.760000 | UAVProtocol 1] Mission: Going to waypoint 10
+INFO     [it=72019 time=0:00:51.090000 | UAVProtocol 3] Mission: Going to waypoint 10
+INFO     [it=74437 time=0:00:52.810000 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=75003 time=0:00:53.210000 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=82065 time=0:00:58.220000 | UAVProtocol 3] Restarting mission for uav
+INFO     [it=82065 time=0:00:58.220000 | UAVProtocol 3] Waypoints for uav: [(-21, 179, 10), (-162, 188, 10), (-265, 35, 10), (-265, -65, 10), (-162, -212, 10), (-18, -218, 10), (159, -191, 10), (268, -32, 10), (268, 68, 10), (162, 212, 10), (15, 215, 10), (0, 0, 10)]
+INFO     [it=82065 time=0:00:58.220000 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=82065 time=0:00:58.220000 | UAVProtocol 3] Paused: False
+INFO     [it=82065 time=0:00:58.220000 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=82066 time=0:00:58.220000 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=83478 time=0:00:59.220000 | UAVProtocol 3] Paused: False
+INFO     [it=83478 time=0:00:59.220000 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=84579 time=0:00:00 | GroundStationProtocol 0 Finalization] Final packet count: 0
+INFO     [it=84579 time=0:00:00 | UAVProtocol 1 Finalization] Final packet count: 28
+INFO     [it=84579 time=0:00:00 | UAVProtocol 2 Finalization] Final packet count: 9
+INFO     [it=84579 time=0:00:00 | UAVProtocol 3 Finalization] Final packet count: 0
+INFO     [it=84579 time=0:00:00 | SensorProtocol 4 Finalization] Final packet count: 24
+INFO     [it=84579 time=0:00:00 | SensorProtocol 5 Finalization] Final packet count: 61
+INFO     [it=84579 time=0:00:00 | SensorProtocol 6 Finalization] Final packet count: 61
+INFO     [it=84579 time=0:00:00 | SensorProtocol 7 Finalization] Final packet count: 61
+INFO     [it=84579 time=0:00:00 | SensorProtocol 8 Finalization] Final packet count: 61
+INFO     [it=84579 time=0:00:00 | SensorProtocol 9 Finalization] Final packet count: 61
+INFO     [it=84579 time=0:00:00 | SensorProtocol 10 Finalization] Final packet count: 61
+INFO     [it=84579 time=0:00:00 | SensorProtocol 11 Finalization] Final packet count: 61
+INFO     [--------- Simulation finished ---------]
+INFO     Real time elapsed: 0:01:54.709340	Total iterations: 84579	Simulation time: 0:01:00
+
+
+
+
+INFO     [--------- Simulation started ---------]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Waypoints for uav: [(-5, 195, 10), (-156, 194, 10), (-257, 43, 10), (-253, -53, 10), (-153, -203, 10), (-3, -203, 10), (154, -196, 10), (254, -46, 10), (256, 56, 10), (155, 205, 10), (6, 206, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 1 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Waypoints for uav: [(-12, 188, 10), (-156, 194, 10), (-264, 36, 10), (-260, -60, 10), (-158, -208, 10), (-10, -210, 10), (158, -192, 10), (264, -36, 10), (264, 64, 10), (164, 214, 10), (6, 206, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 2 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Waypoints for uav: [(-9, 191, 10), (-162, 188, 10), (-265, 35, 10), (-271, -71, 10), (-162, -212, 10), (-9, -209, 10), (159, -191, 10), (262, -38, 10), (268, 68, 10), (162, 212, 10), (9, 209, 10), (0, 0, 10)]
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Mission: Starting mission
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Paused: False
+INFO     [it=0 time=0:00:00 | UAVProtocol 3 Initialization] Pinging network, current packet count 0
+INFO     [it=0 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=1 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 2. Current count 0
+INFO     [it=8 time=0:00:00 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Paused: False
+INFO     [it=1398 time=0:00:01 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Paused: False
+INFO     [it=1404 time=0:00:01 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Paused: False
+INFO     [it=1409 time=0:00:01 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=2665 time=0:00:01.890000 | UAVProtocol 2] Mission: Going to waypoint 1
+INFO     [it=2696 time=0:00:01.910000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=2748 time=0:00:01.950000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Paused: False
+INFO     [it=2820 time=0:00:02 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Paused: False
+INFO     [it=2824 time=0:00:02 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Paused: False
+INFO     [it=2828 time=0:00:02 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Paused: False
+INFO     [it=4246 time=0:00:03 | UAVProtocol 2] Pinging network, current packet count 0
+INFO     [it=4250 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 2
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Sent proposal to coordinating host
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Mission: Stopping mission
+INFO     [it=4253 time=0:00:03 | UAVProtocol 2] Pausing mobility due to consensus
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Coordinating host pausing network and starting consensus
+INFO     [it=4255 time=0:00:03 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=4259 time=0:00:03 | UAVProtocol 3] Paused: True
+INFO     [it=4261 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 3
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Paused: False
+INFO     [it=4262 time=0:00:03 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=4268 time=0:00:03 | SensorProtocol 4] Sensor sent coordinates to UAV 1
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=4269 time=0:00:03 | UAVProtocol 1] Pausing mobility due to consensus
+INFO     [it=5671 time=0:00:04 | UAVProtocol 1] Paused: True
+INFO     [it=5673 time=0:00:04 | UAVProtocol 2] Paused: True
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Proposals for consensus: {2: [2, 888.6554], 1: [2, 888.6554]}
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Decision for consensus: (2, 888.6554)
+INFO     [it=11307 time=0:00:08 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=11311 time=0:00:08 | SensorProtocol 4] Sensor sent 9 packets to UAV 2
+INFO     [it=11312 time=0:00:08 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=11314 time=0:00:08 | SensorProtocol 4] Sensor sent 0 packets to UAV 2
+INFO     [it=11315 time=0:00:08 | UAVProtocol 2] Received 9 packets from sensor 4. Current count 9.
+INFO     [it=11316 time=0:00:08 | UAVProtocol 2] Received 0 packets from sensor 4. Current count 9.
+INFO     [it=11325 time=0:00:08.010000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=11327 time=0:00:08.010000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=13881 time=0:00:09.830000 | UAVProtocol 1] Mission: Going to waypoint 2
+INFO     [it=13911 time=0:00:09.850000 | UAVProtocol 3] Mission: Going to waypoint 2
+INFO     [it=15233 time=0:00:10.790000 | UAVProtocol 1] Mission: Going to waypoint 3
+INFO     [it=15417 time=0:00:10.920000 | UAVProtocol 3] Mission: Going to waypoint 3
+INFO     [it=15538 time=0:00:11 | UAVProtocol 2] Mission: Starting mission
+INFO     [it=15544 time=0:00:11 | UAVProtocol 2] Mission: Starting mission
+INFO     [it=15551 time=0:00:11.010000 | UAVProtocol 2] Mission: Going to waypoint 1
+INFO     [it=17776 time=0:00:12.590000 | UAVProtocol 1] Mission: Going to waypoint 4
+INFO     [it=17928 time=0:00:12.700000 | UAVProtocol 3] Mission: Going to waypoint 4
+INFO     [it=18233 time=0:00:12.920000 | UAVProtocol 2] Mission: Going to waypoint 2
+INFO     [it=19585 time=0:00:13.880000 | UAVProtocol 2] Mission: Going to waypoint 3
+INFO     [it=19892 time=0:00:14.090000 | UAVProtocol 1] Mission: Going to waypoint 5
+INFO     [it=20086 time=0:00:14.230000 | UAVProtocol 3] Mission: Going to waypoint 5
+INFO     [it=22098 time=0:00:15.660000 | UAVProtocol 1] Mission: Going to waypoint 6
+INFO     [it=22121 time=0:00:15.680000 | UAVProtocol 2] Mission: Going to waypoint 4
+INFO     [it=22460 time=0:00:15.920000 | UAVProtocol 3] Mission: Going to waypoint 6
+INFO     [it=24209 time=0:00:17.160000 | UAVProtocol 2] Mission: Going to waypoint 5
+INFO     [it=24634 time=0:00:17.460000 | UAVProtocol 1] Mission: Going to waypoint 7
+INFO     [it=25066 time=0:00:17.770000 | UAVProtocol 3] Mission: Going to waypoint 7
+INFO     [it=26070 time=0:00:18.480000 | UAVProtocol 1] Mission: Going to waypoint 8
+INFO     [it=26558 time=0:00:18.830000 | UAVProtocol 3] Mission: Going to waypoint 8
+INFO     [it=26583 time=0:00:18.850000 | UAVProtocol 2] Mission: Going to waypoint 6
+INFO     [it=28606 time=0:00:20.280000 | UAVProtocol 1] Mission: Going to waypoint 9
+INFO     [it=29080 time=0:00:20.620000 | UAVProtocol 3] Mission: Going to waypoint 9
+INFO     [it=29245 time=0:00:20.740000 | UAVProtocol 2] Mission: Going to waypoint 7
+INFO     [it=30653 time=0:00:21.740000 | UAVProtocol 2] Mission: Going to waypoint 8
+INFO     [it=30700 time=0:00:21.770000 | UAVProtocol 1] Mission: Going to waypoint 10
+INFO     [it=31238 time=0:00:22.150000 | UAVProtocol 3] Mission: Going to waypoint 10
+INFO     [it=33189 time=0:00:23.540000 | UAVProtocol 2] Mission: Going to waypoint 9
+INFO     [it=33600 time=0:00:23.830000 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=34177 time=0:00:24.240000 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=35418 time=0:00:25.120000 | UAVProtocol 2] Mission: Going to waypoint 10
+INFO     [it=38318 time=0:00:27.180000 | UAVProtocol 2] Mission: Stopping mission
+INFO     [it=40646 time=0:00:28.840000 | UAVProtocol 1] Restarting mission for uav
+INFO     [it=40646 time=0:00:28.840000 | UAVProtocol 1] Waypoints for uav: [(-3, 197, 10), (-156, 194, 10), (-257, 43, 10), (-254, -54, 10), (-155, -205, 10), (-4, -204, 10), (157, -193, 10), (254, -46, 10), (254, 54, 10), (155, 205, 10), (5, 205, 10), (0, 0, 10)]
+INFO     [it=40646 time=0:00:28.840000 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=40646 time=0:00:28.840000 | UAVProtocol 1] Paused: False
+INFO     [it=40646 time=0:00:28.840000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=40647 time=0:00:28.840000 | GroundStationProtocol 0] Sent acknowledgment to UAV 1. Current count 0
+INFO     [it=41233 time=0:00:29.250000 | UAVProtocol 3] Restarting mission for uav
+INFO     [it=41233 time=0:00:29.250000 | UAVProtocol 3] Waypoints for uav: [(-21, 179, 10), (-168, 182, 10), (-262, 38, 10), (-271, -71, 10), (-171, -221, 10), (-18, -218, 10), (159, -191, 10), (262, -38, 10), (259, 59, 10), (165, 215, 10), (18, 218, 10), (0, 0, 10)]
+INFO     [it=41233 time=0:00:29.250000 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=41233 time=0:00:29.250000 | UAVProtocol 3] Paused: False
+INFO     [it=41233 time=0:00:29.250000 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=41234 time=0:00:29.250000 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=42064 time=0:00:29.840000 | UAVProtocol 1] Paused: False
+INFO     [it=42064 time=0:00:29.840000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=42648 time=0:00:30.250000 | UAVProtocol 3] Paused: False
+INFO     [it=42648 time=0:00:30.250000 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=43423 time=0:00:30.800000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=43476 time=0:00:30.840000 | UAVProtocol 1] Paused: False
+INFO     [it=43476 time=0:00:30.840000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=43785 time=0:00:31.050000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=44060 time=0:00:31.250000 | UAVProtocol 3] Paused: False
+INFO     [it=44060 time=0:00:31.250000 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=44888 time=0:00:31.840000 | UAVProtocol 1] Paused: False
+INFO     [it=44888 time=0:00:31.840000 | UAVProtocol 1] Pinging network, current packet count 0
+INFO     [it=44890 time=0:00:31.840000 | SensorProtocol 4] Sensor sent coordinates to UAV 1
+INFO     [it=44891 time=0:00:31.840000 | UAVProtocol 1] Sent proposal to coordinating host
+INFO     [it=44891 time=0:00:31.840000 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=44891 time=0:00:31.840000 | UAVProtocol 1] Pausing mobility due to consensus
+INFO     [it=44892 time=0:00:31.840000 | UAVProtocol 3] Coordinating host pausing network and starting consensus
+INFO     [it=44892 time=0:00:31.840000 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=44894 time=0:00:31.840000 | SensorProtocol 4] Sensor sent coordinates to UAV 3
+INFO     [it=45478 time=0:00:32.250000 | UAVProtocol 3] Paused: True
+INFO     [it=46305 time=0:00:32.840000 | UAVProtocol 1] Paused: True
+INFO     [it=51938 time=0:00:36.840000 | UAVProtocol 3] Proposals for consensus: {1: [1, 2063.82171]}
+INFO     [it=51938 time=0:00:36.840000 | UAVProtocol 3] Decision for consensus: (1, 2063.82171)
+INFO     [it=51938 time=0:00:36.840000 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=51940 time=0:00:36.840000 | SensorProtocol 4] Sensor sent 28 packets to UAV 1
+INFO     [it=51942 time=0:00:36.840000 | SensorProtocol 4] Sensor sent 0 packets to UAV 1
+INFO     [it=51943 time=0:00:36.840000 | UAVProtocol 1] Received 28 packets from sensor 4. Current count 28.
+INFO     [it=51944 time=0:00:36.840000 | UAVProtocol 1] Received 0 packets from sensor 4. Current count 28.
+INFO     [it=51949 time=0:00:36.840000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=54374 time=0:00:38.560000 | UAVProtocol 3] Mission: Going to waypoint 2
+INFO     [it=55908 time=0:00:39.650000 | UAVProtocol 3] Mission: Going to waypoint 3
+INFO     [it=56183 time=0:00:39.840000 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=56184 time=0:00:39.840000 | UAVProtocol 1] Mission: Starting mission
+INFO     [it=56193 time=0:00:39.850000 | UAVProtocol 1] Mission: Going to waypoint 1
+INFO     [it=58461 time=0:00:41.460000 | UAVProtocol 3] Mission: Going to waypoint 4
+INFO     [it=58757 time=0:00:41.670000 | UAVProtocol 1] Mission: Going to waypoint 2
+INFO     [it=60123 time=0:00:42.640000 | UAVProtocol 1] Mission: Going to waypoint 3
+INFO     [it=60611 time=0:00:42.990000 | UAVProtocol 3] Mission: Going to waypoint 5
+INFO     [it=62673 time=0:00:44.450000 | UAVProtocol 1] Mission: Going to waypoint 4
+INFO     [it=63133 time=0:00:44.780000 | UAVProtocol 3] Mission: Going to waypoint 6
+INFO     [it=64795 time=0:00:45.960000 | UAVProtocol 1] Mission: Going to waypoint 5
+INFO     [it=65725 time=0:00:46.620000 | UAVProtocol 3] Mission: Going to waypoint 7
+INFO     [it=67065 time=0:00:47.570000 | UAVProtocol 1] Mission: Going to waypoint 6
+INFO     [it=67091 time=0:00:47.590000 | UAVProtocol 3] Mission: Going to waypoint 8
+INFO     [it=69545 time=0:00:49.330000 | UAVProtocol 1] Mission: Going to waypoint 7
+INFO     [it=69669 time=0:00:49.420000 | UAVProtocol 3] Mission: Going to waypoint 9
+INFO     [it=70953 time=0:00:50.330000 | UAVProtocol 1] Mission: Going to waypoint 8
+INFO     [it=71735 time=0:00:50.890000 | UAVProtocol 3] Mission: Going to waypoint 10
+INFO     [it=73503 time=0:00:52.140000 | UAVProtocol 1] Mission: Going to waypoint 9
+INFO     [it=74825 time=0:00:53.080000 | UAVProtocol 3] Mission: Stopping mission
+INFO     [it=75605 time=0:00:53.640000 | UAVProtocol 1] Mission: Going to waypoint 10
+INFO     [it=78491 time=0:00:55.690000 | UAVProtocol 1] Mission: Stopping mission
+INFO     [it=81873 time=0:00:58.080000 | UAVProtocol 3] Restarting mission for uav
+INFO     [it=81873 time=0:00:58.080000 | UAVProtocol 3] Waypoints for uav: [(-21, 179, 10), (-168, 182, 10), (-271, 29, 10), (-268, -68, 10), (-159, -209, 10), (-21, -221, 10), (171, -179, 10), (268, -32, 10), (265, 65, 10), (159, 209, 10), (21, 221, 10), (0, 0, 10)]
+INFO     [it=81873 time=0:00:58.080000 | UAVProtocol 3] Mission: Starting mission
+INFO     [it=81873 time=0:00:58.080000 | UAVProtocol 3] Paused: False
+INFO     [it=81873 time=0:00:58.080000 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=81874 time=0:00:58.080000 | GroundStationProtocol 0] Sent acknowledgment to UAV 3. Current count 0
+INFO     [it=83286 time=0:00:59.080000 | UAVProtocol 3] Paused: False
+INFO     [it=83286 time=0:00:59.080000 | UAVProtocol 3] Pinging network, current packet count 0
+INFO     [it=84410 time=0:00:59.890000 | UAVProtocol 3] Mission: Going to waypoint 1
+INFO     [it=84583 time=0:00:00 | GroundStationProtocol 0 Finalization] Final packet count: 0
+INFO     [it=84583 time=0:00:00 | UAVProtocol 1 Finalization] Final packet count: 28
+INFO     [it=84583 time=0:00:00 | UAVProtocol 2 Finalization] Final packet count: 9
+INFO     [it=84583 time=0:00:00 | UAVProtocol 3 Finalization] Final packet count: 0
+INFO     [it=84583 time=0:00:00 | SensorProtocol 4 Finalization] Final packet count: 24
+INFO     [it=84583 time=0:00:00 | SensorProtocol 5 Finalization] Final packet count: 61
+INFO     [it=84583 time=0:00:00 | SensorProtocol 6 Finalization] Final packet count: 61
+INFO     [it=84583 time=0:00:00 | SensorProtocol 7 Finalization] Final packet count: 61
+INFO     [it=84583 time=0:00:00 | SensorProtocol 8 Finalization] Final packet count: 61
+INFO     [it=84583 time=0:00:00 | SensorProtocol 9 Finalization] Final packet count: 61
+INFO     [it=84583 time=0:00:00 | SensorProtocol 10 Finalization] Final packet count: 61
+INFO     [it=84583 time=0:00:00 | SensorProtocol 11 Finalization] Final packet count: 61
+INFO     [--------- Simulation finished ---------]
+INFO     Real time elapsed: 0:01:51.413762	Total iterations: 84583	Simulation time: 0:01:00

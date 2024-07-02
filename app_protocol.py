@@ -331,23 +331,28 @@ class UAVProtocol(IProtocol):
             if msg["decision"] >= 0:
                 # This UAV was chosen to go to sensor and collect data
                 if msg["decision"] == self._id:
-                    # Receive packets
-                    self.total_received_packets += msg["total_packets"]
-                    self._log.info(f"Received {msg['total_packets']} packets from sensor {msg['sender_id']}. Current count {self.total_received_packets}.")
-                    
-                    # Resume mobility
-                    self._paused = False
-                    lastWaypoint = self.currentWaypointIndex
-                    self._mission.start_mission(self.waypoints[lastWaypoint:])
+                    if self._paused:
+                        
+                        # Receive packets
+                        self.total_received_packets += msg["total_packets"]
+                        self._log.info(f"Received {msg['total_packets']} packets from sensor {msg['sender_id']}. Current count {self.total_received_packets}.")
+                        self.provider.schedule_timer("receive_packets_from_sensor", self.provider.current_time() + 3)
 
             else: # This UAV received coordinates from sensor and will calculate distances from it
                 if (self._coordHost != self._id):
-                    uavDistsFromSensor = get_uav_distances_from_sensor(self.uavPositions, msg["sender_pos"])
-                    minUAV = min(uavDistsFromSensor, key=uavDistsFromSensor.get)
-                    minDist = uavDistsFromSensor.get(minUAV)
-                    self._send_proposal_to_coord_host((minUAV, minDist))
+                    if not self._paused:
+                        uavDistsFromSensor = get_uav_distances_from_sensor(self.uavPositions, msg["sender_pos"])
+                        minUAV = min(uavDistsFromSensor, key=uavDistsFromSensor.get)
+                        minDist = uavDistsFromSensor.get(minUAV)
+                        self._send_proposal_to_coord_host((minUAV, minDist))
 
-                    self._log.info(f"Sent proposal to coordinating host")
+                        self._log.info(f"Sent proposal to coordinating host")
+
+                        self._paused = True
+                        self.currentWaypointIndex = self._mission.current_waypoint
+                        self._mission.stop_mission()
+
+                        self._log.info(f"Pausing mobility due to consensus")
                 
 
         # Received message from other UAVs
@@ -375,16 +380,17 @@ class UAVProtocol(IProtocol):
             # UAV stop moving until consensus finishes
             elif msg["pause_network"]:
                 if msg["sender_id"] == self._coordHost:
-                    self._paused = True
-                    self.currentWaypointIndex = self._mission.current_waypoint
-                    self._mission.stop_mission()
+                    if not self._paused:
+                        self._paused = True
+                        self.currentWaypointIndex = self._mission.current_waypoint
+                        self._mission.stop_mission()
 
-                self._log.info(f"Pausing mobility due to consensus")
+                        self._log.info(f"Pausing mobility due to consensus")
             
             # After consensus finishes
             elif (msg["decision"] >= 0):
                 # If UAV was waiting for consensus
-                if self.paused:
+                if self._paused:
                     if (msg["decision"] == self._id):
                         self._broadcast_decision(msg["decision"])
                     else:
@@ -401,6 +407,11 @@ class UAVProtocol(IProtocol):
         elif (timer == "restart_mission"):
             self._log.info(f"Restarting mission for uav")
             self._start_routine()
+        elif (timer == "receive_packets_from_sensor"):
+            # Resume mobility
+            self._paused = False
+            lastWaypoint = self.currentWaypointIndex
+            self._mission.start_mission(self.waypoints[lastWaypoint:])
         elif (timer == "coord_waiting_for_proposal"):
             # Coord host calculates final decision
             self._log.info(f"Proposals for consensus: {self.proposals}")
