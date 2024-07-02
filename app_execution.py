@@ -6,11 +6,10 @@ from gradysim.simulator.simulation import SimulationBuilder, SimulationConfigura
 from app_protocol import SensorProtocol, UAVProtocol, GroundStationProtocol
 
 import globals
-import logging
+
+global uavIDs
 
 def main():
-    _mainLog = logging.getLogger()
-
     # Configuring simulation
     config = SimulationConfiguration(
         duration=globals.SIMULATION_DURATION,
@@ -21,19 +20,16 @@ def main():
 
     builder = SimulationBuilder(config)
 
-    # Instantiating sensors in fixed positions
-    for coord in globals.SENSORS_COORD_LIST:
-        id = builder.add_node(SensorProtocol, coord)
-        _mainLog.info(f"Placing sensor {id} at pos {coord}\n")
-
-    # Instantiating ground station at a fixed position
+    # Instantiating ground station at a fixed position, ID = 0
     builder.add_node(GroundStationProtocol, globals.GROUND_BASE_CORD)
-    _mainLog.info(f"Placing ground station at pos {globals.GROUND_BASE_CORD}\n")
 
-    # Instantiating UAVs at ground base
+    # Instantiating UAVs at ground base, IDs = 1,2,3... --> (1, MAX_NODES+)
     for _ in range(globals.MAX_NODES):
-        id = builder.add_node(UAVProtocol, globals.GROUND_BASE_CORD)
-        _mainLog.info(f"Placing UAV {id} at ground station\n")
+        builder.add_node(UAVProtocol, globals.GROUND_BASE_CORD)
+
+    # Instantiating sensors in fixed positions, IDs = ... 4,5,6,7,8,9,10,11 -> (MAX_NODES + 1, MAX_NODES + len(SENSORS_COORD_LIST))
+    for coord in globals.SENSORS_COORD_LIST:
+        builder.add_node(SensorProtocol, coord)
 
     # Adding required handlers
     builder.add_handler(TimerHandler())
