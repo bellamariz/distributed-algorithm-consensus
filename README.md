@@ -56,3 +56,7 @@ For this, we will need a request-reponse messaging system that falls within one 
 An example of what the network may look like is as follows. The UAVs would follow a counter clockwise path, starting from the ground base at `(0,0,0)`, passing through each waypoint `w1` to `w8`, collecting data from all the sensors `S1` to `S8`, and finishing back at the ground base.
 
 ![network](coords.jpg)
+
+### Results
+
+Check the `videos` folder for examples of simulations. Each simulation's corresponding log is available at the root files `logs-nodes3.dur60.txt` and `logs-nodes6.dur60.txt`.
