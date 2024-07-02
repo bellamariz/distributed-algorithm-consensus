@@ -184,7 +184,7 @@ class GroundStationProtocol(IProtocol):
 
             self.total_collected_packets += general_message["total_packets"]
 
-            # self._log.info(f"Sent acknowledgment to UAV {general_message['sender_id']}. Current count {self.total_collected_packets}")
+            self._log.info(f"Sent acknowledgment to UAV {general_message['sender_id']}. Current count {self.total_collected_packets}")
 
     # GroundStation implements handle_telemetry
     def handle_telemetry(self, telemetry: Telemetry) -> None:
@@ -265,6 +265,7 @@ class UAVProtocol(IProtocol):
 
     # UAV will ping network (send broadcast) every 1 second using a timer
     def _ping_network(self) -> None:
+        self._log.info(f"Paused: {self._paused}")
         # If paused for consensus, do nothing else
         if (self._paused):
             return
@@ -283,7 +284,7 @@ class UAVProtocol(IProtocol):
 
         self.provider.schedule_timer("uav_ping_network", self.provider.current_time() + 1)
 
-    # If UAV is not already paused, it will send a broadcast so they stop moving until consensus is finished
+    # If UAV is not already paused, coord will send a broadcast so they stop moving until consensus is finished
     def _pause_network(self) -> None:
         messageToAll = new_message(
             packets=self.total_received_packets,
@@ -296,14 +297,13 @@ class UAVProtocol(IProtocol):
         broadcastCmd = BroadcastMessageCommand(json.dumps(messageToAll))
         self.provider.send_communication_command(broadcastCmd)
 
-    # If UAV is not already paused, it will send a broadcast so they stop moving until consensus is finished
+    # Broadcast decision for all nodes
     def _broadcast_decision(self, decision: int) -> None:
         messageToAll = new_message(
             packets=self.total_received_packets,
             senderType= GeneralSender.UAV.value,
             senderID=self._id,
             senderPos=self.position,
-            pause=False,
             decision=decision,
         )
 
@@ -331,15 +331,23 @@ class UAVProtocol(IProtocol):
             if msg["decision"] >= 0:
                 # This UAV was chosen to go to sensor and collect data
                 if msg["decision"] == self._id:
+                    # Receive packets
                     self.total_received_packets += msg["total_packets"]
                     self._log.info(f"Received {msg['total_packets']} packets from sensor {msg['sender_id']}. Current count {self.total_received_packets}.")
-            # This UAV received coordinates from sensor and will calculate distances from it
-            else:
+                    
+                    # Resume mobility
+                    self._paused = False
+                    lastWaypoint = self.currentWaypointIndex
+                    self._mission.start_mission(self.waypoints[lastWaypoint:])
+
+            else: # This UAV received coordinates from sensor and will calculate distances from it
                 if (self._coordHost != self._id):
                     uavDistsFromSensor = get_uav_distances_from_sensor(self.uavPositions, msg["sender_pos"])
                     minUAV = min(uavDistsFromSensor, key=uavDistsFromSensor.get)
                     minDist = uavDistsFromSensor.get(minUAV)
                     self._send_proposal_to_coord_host((minUAV, minDist))
+
+                    self._log.info(f"Sent proposal to coordinating host")
                 
 
         # Received message from other UAVs
@@ -348,11 +356,14 @@ class UAVProtocol(IProtocol):
             if (msg["decision"] < 0) and (msg["proposal"][0] < 0):
                 if not self._paused:
                     self.uavPositions.update({msg["sender_id"] : msg["sender_pos"]})
-            # Need to make a decision about what uav will go to sensor based on received proposals
+            
+            # Need to make a decision about what UAV will go to sensor based on received proposals
             elif (msg["decision"] < 0) and (msg["proposal"][0] >= 0):
                 # If uav is coordinating host, enter consensus mode and pause movimentation of network
                 if (self._coordHost == self._id):
                     if not self._paused:
+                        self._log.info(f"Coordinating host pausing network and starting consensus")
+
                         self._paused = True
                         self.currentWaypointIndex = self._mission.current_waypoint
                         self._mission.stop_mission()
@@ -360,24 +371,28 @@ class UAVProtocol(IProtocol):
                         self.provider.schedule_timer("coord_waiting_for_proposal", self.provider.current_time() + 5)
                     # For each received proposal, we have a dict: { proposer_uav_id : (proposed_uav, proposed_dist) }
                     self.proposals.update({msg["sender_id"] : msg["proposal"]})
+            
             # UAV stop moving until consensus finishes
-            elif (msg["pause_network"] == True):
-                self._paused = True
-                self.currentWaypointIndex = self._mission.current_waypoint
-                self._mission.stop_mission()
-            # UAV moves again after consensus finishes
-            elif (msg["decision"] >= 0) and (msg["pause_network"] == False):
-                # If UAV was waiting consensus
-                if self._paused:
-                    # If it is the UAV closest to the sensor, broadcast the decision
-                    if msg["decision"] == self._id:
+            elif msg["pause_network"]:
+                if msg["sender_id"] == self._coordHost:
+                    self._paused = True
+                    self.currentWaypointIndex = self._mission.current_waypoint
+                    self._mission.stop_mission()
+
+                self._log.info(f"Pausing mobility due to consensus")
+            
+            # After consensus finishes
+            elif (msg["decision"] >= 0):
+                # If UAV was waiting for consensus
+                if self.paused:
+                    if (msg["decision"] == self._id):
                         self._broadcast_decision(msg["decision"])
-
-                    # Resume mobility
-                    self._paused = False
-                    lastWaypoint = self.currentWaypointIndex
-                    self._mission.start_mission(self.waypoints[lastWaypoint:])
-
+                    else:
+                        # Resume mobility
+                        self._paused = False
+                        lastWaypoint = self.currentWaypointIndex
+                        self._mission.start_mission(self.waypoints[lastWaypoint:])
+                            
 
     # UAV implements handle_timer
     def handle_timer(self, timer: str) -> None:
@@ -387,15 +402,20 @@ class UAVProtocol(IProtocol):
             self._log.info(f"Restarting mission for uav")
             self._start_routine()
         elif (timer == "coord_waiting_for_proposal"):
+            # Coord host calculates final decision
             self._log.info(f"Proposals for consensus: {self.proposals}")
             finalDecision = make_decision(self.proposals)
             self._log.info(f"Decision for consensus: {finalDecision}")
 
+            # Broadcast decision
             self._broadcast_decision(finalDecision[0])
             self.proposals.clear()
-            self._paused = False
-            lastWaypoint = self.currentWaypointIndex
-            self._mission.start_mission(self.waypoints[lastWaypoint:])
+
+            # Resume mobility
+            if (finalDecision[0] != self._id):
+                self._paused = False
+                lastWaypoint = self.currentWaypointIndex
+                self._mission.start_mission(self.waypoints[lastWaypoint:])
 
 
     # UAV implements handle_packet
@@ -428,8 +448,3 @@ class UAVProtocol(IProtocol):
     # UAV implements finish
     def finish(self) -> None:
         self._log.info(f"Final packet count: {self.total_received_packets}")
-
-
-# currentWaypoint = self._mission.current_waypoint
-# sensorPos = general_message["sender_pos"]
-# distance = self.position
