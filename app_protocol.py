@@ -332,7 +332,6 @@ class UAVProtocol(IProtocol):
                 # This UAV was chosen to go to sensor and collect data
                 if msg["decision"] == self._id:
                     if self._paused:
-                        
                         # Receive packets
                         self.total_received_packets += msg["total_packets"]
                         self._log.info(f"Received {msg['total_packets']} packets from sensor {msg['sender_id']}. Current count {self.total_received_packets}.")
@@ -373,7 +372,7 @@ class UAVProtocol(IProtocol):
                         self.currentWaypointIndex = self._mission.current_waypoint
                         self._mission.stop_mission()
                         self._pause_network()
-                        self.provider.schedule_timer("coord_waiting_for_proposal", self.provider.current_time() + 5)
+                        self.provider.schedule_timer("coord_waiting_for_proposal", self.provider.current_time() + 3)
                     # For each received proposal, we have a dict: { proposer_uav_id : (proposed_uav, proposed_dist) }
                     self.proposals.update({msg["sender_id"] : msg["proposal"]})
             
